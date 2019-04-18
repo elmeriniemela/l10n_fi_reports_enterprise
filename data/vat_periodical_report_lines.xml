@@ -1,0 +1,301 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<odoo>
+  <data>
+    <record id="sprintit_vat_periodicaltopay" model="account.financial.html.report.line">
+      <field name="hide_if_zero">False</field>
+      <field ref="sprintit_vat_periodical_report" name="financial_report_id"/>
+      <field name="code">TOPAY</field>
+      <field name="figure_type">float</field>
+      <field name="sequence">9</field>
+      <field name="display_name">Maksettava vero / Palautukseen oikeuttava vero (-)</field>
+      <field name="formulas">balance = ALVM24.balance + ALVM14.balance + ALVM10.balance + ALVOTEU.balance + ALVOPEU.balance + ALVOTEX.balance + ALVOPRM.balance - ALVVAH.balance</field>
+      <field name="name">Maksettava vero / Palautukseen oikeuttava vero (-)</field>
+      <field name="print_on_new_page">False</field>
+      <field name="green_on_positive">True</field>
+      <field name="special_date_changer">normal</field>
+      <field name="level">0</field>
+      <field name="show_domain">foldable</field>
+    </record>
+    <record id="sprintit_vat_periodical" model="account.financial.html.report.line">
+      <field name="hide_if_zero">False</field>
+      <field ref="sprintit_vat_periodical_report" name="financial_report_id"/>
+      <field name="figure_type">float</field>
+      <field name="sequence">0</field>
+      <field name="display_name">Vero kotimaan myynneistä verokannoittain</field>
+      <field name="name">Vero kotimaan myynneistä verokannoittain</field>
+      <field name="print_on_new_page">False</field>
+      <field name="green_on_positive">True</field>
+      <field name="special_date_changer">normal</field>
+      <field name="level">2</field>
+      <field name="show_domain">foldable</field>
+    </record>
+    <record id="sprintit_vat_periodicalalvoteu" model="account.financial.html.report.line">
+      <field name="hide_if_zero">False</field>
+      <field eval="[('tax_line_id.tag_ids', 'in', [ref('l10n_fi.305-purchases-material-eu')])]" name="domain"/>
+      <field ref="sprintit_vat_periodical_report" name="financial_report_id"/>
+      <field name="code">ALVOTEU</field>
+      <field name="figure_type">float</field>
+      <field name="sequence">4</field>
+      <field name="display_name">Vero tavaraostoista muista EU-maista</field>
+      <field name="formulas">balance = -sum.balance</field>
+      <field name="name">Vero tavaraostoista muista EU-maista</field>
+      <field name="print_on_new_page">False</field>
+      <field name="green_on_positive">True</field>
+      <field name="special_date_changer">normal</field>
+      <field name="groupby">move_id</field>
+      <field name="level">2</field>
+      <field name="show_domain">foldable</field>
+    </record>
+    <record id="sprintit_vat_periodicalalvopeu" model="account.financial.html.report.line">
+      <field name="hide_if_zero">False</field>
+      <field eval="[('tax_line_id.tag_ids', 'in', [ref('l10n_fi.306-purchases-service-eu')])]" name="domain"/>
+      <field ref="sprintit_vat_periodical_report" name="financial_report_id"/>
+      <field name="code">ALVOPEU</field>
+      <field name="figure_type">float</field>
+      <field name="sequence">5</field>
+      <field name="display_name">Vero palveluostoista muista EU-maista</field>
+      <field name="formulas">balance = -sum.balance</field>
+      <field name="name">Vero palveluostoista muista EU-maista</field>
+      <field name="print_on_new_page">False</field>
+      <field name="green_on_positive">True</field>
+      <field name="special_date_changer">normal</field>
+      <field name="groupby">move_id</field>
+      <field name="level">2</field>
+      <field name="show_domain">foldable</field>
+    </record>
+    <record id="sprintit_vat_periodicalalvotex" model="account.financial.html.report.line">
+      <field name="hide_if_zero">False</field>
+      <field eval="[('tax_line_id.tag_ids', 'in', [ref('l10n_fi.340-import-payable')])]" name="domain"/>
+      <field ref="sprintit_vat_periodical_report" name="financial_report_id"/>
+      <field name="code">ALVOTEX</field>
+      <field name="figure_type">float</field>
+      <field name="sequence">6</field>
+      <field name="display_name">Vero tavaroiden maahantuonneista EU:n ulkopuolelta</field>
+      <field name="formulas">balance = -sum.balance</field>
+      <field name="name">Vero tavaroiden maahantuonneista EU:n ulkopuolelta</field>
+      <field name="print_on_new_page">False</field>
+      <field name="green_on_positive">True</field>
+      <field name="special_date_changer">normal</field>
+      <field name="groupby">move_id</field>
+      <field name="level">2</field>
+      <field name="show_domain">foldable</field>
+    </record>
+    <record id="sprintit_vat_periodicalalvoprm" model="account.financial.html.report.line">
+      <field name="hide_if_zero">False</field>
+      <field eval="[('tax_line_id.tag_ids', 'in', [ref('l10n_fi.318-purchases-construct')])]" name="domain"/>
+      <field ref="sprintit_vat_periodical_report" name="financial_report_id"/>
+      <field name="code">ALVOPRM</field>
+      <field name="figure_type">float</field>
+      <field name="sequence">7</field>
+      <field name="display_name">Vero rakentamispalvelun ja metalliromun ostoista (käännetty verovelvollisuus)</field>
+      <field name="formulas">balance = -sum.balance</field>
+      <field name="name">Vero rakentamispalvelun ja metalliromun ostoista (käännetty verovelvollisuus)</field>
+      <field name="print_on_new_page">False</field>
+      <field name="green_on_positive">True</field>
+      <field name="special_date_changer">normal</field>
+      <field name="groupby">move_id</field>
+      <field name="level">2</field>
+      <field name="show_domain">foldable</field>
+    </record>
+    <record id="sprintit_vat_periodicalalvvah" model="account.financial.html.report.line">
+      <field name="hide_if_zero">False</field>
+      <field eval="[('tax_line_id.tag_ids', 'in', [ref('l10n_fi.307-purchases')])]" name="domain"/>
+      <field ref="sprintit_vat_periodical_report" name="financial_report_id"/>
+      <field name="code">ALVVAH</field>
+      <field name="figure_type">float</field>
+      <field name="sequence">8</field>
+      <field name="display_name">Verokauden vähennettävä vero</field>
+      <field name="formulas">balance = sum.balance</field>
+      <field name="name">Verokauden vähennettävä vero</field>
+      <field name="print_on_new_page">False</field>
+      <field name="green_on_positive">True</field>
+      <field name="special_date_changer">normal</field>
+      <field name="groupby">move_id</field>
+      <field name="level">2</field>
+      <field name="show_domain">foldable</field>
+    </record>
+    <record id="sprintit_vat_periodicalam0" model="account.financial.html.report.line">
+      <field name="hide_if_zero">False</field>
+      <field eval="[('tax_ids', 'in', [ref('l10n_fi.aland0'),ref('l10n_fi.sales0'),ref('l10n_fi.vat0export')])]" name="domain"/>
+      <field ref="sprintit_vat_periodical_report" name="financial_report_id"/>
+      <field name="code">AM0</field>
+      <field name="figure_type">float</field>
+      <field name="sequence">11</field>
+      <field name="display_name">0-verokannan alainen liikevaihto</field>
+      <field name="formulas">balance = -sum.balance</field>
+      <field name="name">0-verokannan alainen liikevaihto</field>
+      <field name="print_on_new_page">False</field>
+      <field name="green_on_positive">True</field>
+      <field name="special_date_changer">normal</field>
+      <field name="groupby">move_id</field>
+      <field name="level">2</field>
+      <field name="show_domain">foldable</field>
+    </record>
+    <record id="sprintit_vat_periodicalamteu" model="account.financial.html.report.line">
+      <field name="hide_if_zero">False</field>
+      <field eval="[('tax_ids', 'in', [ref('l10n_fi.vat0eugoods')])]" name="domain"/>
+      <field ref="sprintit_vat_periodical_report" name="financial_report_id"/>
+      <field name="code">AMTEU</field>
+      <field name="figure_type">float</field>
+      <field name="sequence">12</field>
+      <field name="display_name">Tavaroiden myynnit muihin EU-maihin</field>
+      <field name="formulas">balance = -sum.balance</field>
+      <field name="name">Tavaroiden myynnit muihin EU-maihin</field>
+      <field name="print_on_new_page">False</field>
+      <field name="green_on_positive">True</field>
+      <field name="special_date_changer">normal</field>
+      <field name="groupby">move_id</field>
+      <field name="level">2</field>
+      <field name="show_domain">foldable</field>
+    </record>
+    <record id="sprintit_vat_periodicalampeu" model="account.financial.html.report.line">
+      <field name="hide_if_zero">False</field>
+      <field eval="[('tax_ids', 'in', [ref('l10n_fi.vat0euservice')])]" name="domain"/>
+      <field ref="sprintit_vat_periodical_report" name="financial_report_id"/>
+      <field name="code">AMPEU</field>
+      <field name="figure_type">float</field>
+      <field name="sequence">13</field>
+      <field name="display_name">Palvelujen myynnit muihin EU-maihin</field>
+      <field name="formulas">balance = -sum.balance</field>
+      <field name="name">Palvelujen myynnit muihin EU-maihin</field>
+      <field name="print_on_new_page">False</field>
+      <field name="green_on_positive">True</field>
+      <field name="special_date_changer">normal</field>
+      <field name="groupby">move_id</field>
+      <field name="level">2</field>
+      <field name="show_domain">foldable</field>
+    </record>
+    <record id="sprintit_vat_periodicalaopeu" model="account.financial.html.report.line">
+      <field name="hide_if_zero">False</field>
+      <field eval="[('tax_ids', 'in', [ref('l10n_fi.purchase14euservice2'),ref('l10n_fi.purchase10euservice2'),ref('l10n_fi.purchase24euservice2')])]" name="domain"/>
+      <field ref="sprintit_vat_periodical_report" name="financial_report_id"/>
+      <field name="code">AOPEU</field>
+      <field name="figure_type">float</field>
+      <field name="sequence">15</field>
+      <field name="display_name">Palveluostot muista EU-maista</field>
+      <field name="formulas">balance = sum.balance</field>
+      <field name="name">Palveluostot muista EU-maista</field>
+      <field name="print_on_new_page">False</field>
+      <field name="green_on_positive">True</field>
+      <field name="special_date_changer">normal</field>
+      <field name="groupby">move_id</field>
+      <field name="level">2</field>
+      <field name="show_domain">foldable</field>
+    </record>
+    <record id="sprintit_vat_periodicalaotex" model="account.financial.html.report.line">
+      <field name="hide_if_zero">False</field>
+      <field eval="[('tax_ids', 'in', [ref('l10n_fi.import_pay24')])]" name="domain"/>
+      <field ref="sprintit_vat_periodical_report" name="financial_report_id"/>
+      <field name="code">AOTEX</field>
+      <field name="figure_type">float</field>
+      <field name="sequence">16</field>
+      <field name="display_name">Tavaroiden maahantuonnit EU: ulkopuolelta</field>
+      <field name="formulas">balance = sum.balance</field>
+      <field name="name">Tavaroiden maahantuonnit EU: ulkopuolelta</field>
+      <field name="print_on_new_page">False</field>
+      <field name="green_on_positive">True</field>
+      <field name="special_date_changer">normal</field>
+      <field name="groupby">move_id</field>
+      <field name="level">2</field>
+      <field name="show_domain">foldable</field>
+    </record>
+    <record id="sprintit_vat_periodicalaoprm" model="account.financial.html.report.line">
+      <field name="hide_if_zero">False</field>
+      <field eval="[('tax_ids', 'in', [ref('l10n_fi.purchase24construct2')])]" name="domain"/>
+      <field ref="sprintit_vat_periodical_report" name="financial_report_id"/>
+      <field name="code">AOPRM</field>
+      <field name="figure_type">float</field>
+      <field name="sequence">17</field>
+      <field name="display_name">Rakentamispalvelun ja metalliromun ostot (käännetty verovelvollisuus)</field>
+      <field name="formulas">balance = sum.balance</field>
+      <field name="name">Rakentamispalvelun ja metalliromun ostot (käännetty verovelvollisuus)</field>
+      <field name="print_on_new_page">False</field>
+      <field name="green_on_positive">True</field>
+      <field name="special_date_changer">normal</field>
+      <field name="groupby">move_id</field>
+      <field name="level">2</field>
+      <field name="show_domain">foldable</field>
+    </record>
+    <record id="sprintit_vat_periodicalamprm" model="account.financial.html.report.line">
+      <field name="hide_if_zero">False</field>
+      <field eval="[('tax_ids', 'in', [ref('l10n_fi.construct0')])]" name="domain"/>
+      <field ref="sprintit_vat_periodical_report" name="financial_report_id"/>
+      <field name="code">AMPRM</field>
+      <field name="figure_type">float</field>
+      <field name="sequence">18</field>
+      <field name="display_name">Rakentamispalvelun ja metalliromun myynnit (käännetty verovelvollisuus)</field>
+      <field name="formulas">balance = -sum.balance</field>
+      <field name="name">Rakentamispalvelun ja metalliromun myynnit (käännetty verovelvollisuus)</field>
+      <field name="print_on_new_page">False</field>
+      <field name="green_on_positive">True</field>
+      <field name="special_date_changer">normal</field>
+      <field name="groupby">move_id</field>
+      <field name="level">2</field>
+      <field name="show_domain">foldable</field>
+    </record>
+    <record id="sprintit_vat_periodicalalvm24" model="account.financial.html.report.line">
+      <field name="hide_if_zero">False</field>
+      <field eval="[('tax_line_id.tag_ids', 'in', [ref('l10n_fi.301-sales24')])]" name="domain"/>
+      <field ref="sprintit_vat_periodical_report" name="financial_report_id"/>
+      <field name="code">ALVM24</field>
+      <field name="figure_type">float</field>
+      <field name="sequence">1</field>
+      <field name="display_name">24%:n vero</field>
+      <field name="formulas">balance = -sum.balance</field>
+      <field name="name">24%:n vero</field>
+      <field name="print_on_new_page">False</field>
+      <field name="green_on_positive">True</field>
+      <field name="special_date_changer">normal</field>
+      <field name="groupby">move_id</field>
+      <field name="level">3</field>
+      <field name="show_domain">foldable</field>
+    </record>
+    <record id="sprintit_vat_periodicalalvm14" model="account.financial.html.report.line">
+      <field name="hide_if_zero">False</field>
+      <field eval="[('tax_line_id.tag_ids', 'in', [ref('l10n_fi.302-sales14')])]" name="domain"/>
+      <field ref="sprintit_vat_periodical_report" name="financial_report_id"/>
+      <field name="code">ALVM14</field>
+      <field name="figure_type">float</field>
+      <field name="sequence">2</field>
+      <field name="display_name">14%:n vero</field>
+      <field name="formulas">balance = -sum.balance</field>
+      <field name="name">14%:n vero</field>
+      <field name="print_on_new_page">False</field>
+      <field name="green_on_positive">True</field>
+      <field name="special_date_changer">normal</field>
+      <field name="groupby">move_id</field>
+      <field name="level">3</field>
+      <field name="show_domain">foldable</field>
+    </record>
+    <record id="sprintit_vat_periodicalalvm10" model="account.financial.html.report.line">
+      <field name="hide_if_zero">False</field>
+      <field eval="[('tax_line_id.tag_ids', 'in', [ref('l10n_fi.303-sales10')])]" name="domain"/>
+      <field ref="sprintit_vat_periodical_report" name="financial_report_id"/>
+      <field name="code">ALVM10</field>
+      <field name="figure_type">float</field>
+      <field name="sequence">3</field>
+      <field name="display_name">10%:n vero</field>
+      <field name="formulas">balance = -sum.balance</field>
+      <field name="name">10%:n vero</field>
+      <field name="print_on_new_page">False</field>
+      <field name="green_on_positive">True</field>
+      <field name="special_date_changer">normal</field>
+      <field name="groupby">move_id</field>
+      <field name="level">3</field>
+      <field name="show_domain">foldable</field>
+    </record>
+    <record id="sprintit_vat_periodicalblank" model="account.financial.html.report.line">
+      <field name="hide_if_zero">False</field>
+      <field ref="sprintit_vat_periodical_report" name="financial_report_id"/>
+      <field name="code">BLANK</field>
+      <field name="figure_type">float</field>
+      <field name="sequence">10</field>
+      <field name="display_name">False</field>
+      <field name="print_on_new_page">False</field>
+      <field name="green_on_positive">True</field>
+      <field name="special_date_changer">normal</field>
+      <field name="level">4</field>
+      <field name="show_domain">foldable</field>
+    </record>
+  </data>
+</odoo>

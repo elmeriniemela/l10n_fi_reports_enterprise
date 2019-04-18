@@ -1,0 +1,1760 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<odoo>
+  <data>
+    <record id="sprintit_balance_bat" model="account.financial.html.report.line">
+      <field name="formulas">balance = BAP.balance + BAV.balance</field>
+      <field name="name">V a s t a a v a a</field>
+      <field name="special_date_changer">normal</field>
+      <field name="print_on_new_page">False</field>
+      <field name="show_domain">foldable</field>
+      <field name="hide_if_zero">False</field>
+      <field name="figure_type">float</field>
+      <field name="level">0</field>
+      <field name="code">BAT</field>
+      <field name="financial_report_id" ref="sprintit_balance_report"/>
+      <field name="display_name">V a s t a a v a a</field>
+      <field name="sequence">2</field>
+      <field name="green_on_positive">True</field>
+    </record>
+    <record id="sprintit_balance_bpt" model="account.financial.html.report.line">
+      <field name="formulas">balance = BPO.balance + BPS.balance + BPP.balance + BPV.balance</field>
+      <field name="name">V a s t a t t a v a a</field>
+      <field name="special_date_changer">normal</field>
+      <field name="print_on_new_page">False</field>
+      <field name="show_domain">foldable</field>
+      <field name="hide_if_zero">False</field>
+      <field name="figure_type">float</field>
+      <field name="level">0</field>
+      <field name="code">BPT</field>
+      <field name="financial_report_id" ref="sprintit_balance_report"/>
+      <field name="display_name">V a s t a t t a v a a</field>
+      <field name="sequence">8</field>
+      <field name="green_on_positive">True</field>
+    </record>
+    <record id="sprintit_balance_bap" model="account.financial.html.report.line">
+      <field name="formulas">balance = BAA1.balance + BAA2.balance + BAS.balance</field>
+      <field name="name">PYSYVÄT VASTAAVAT</field>
+      <field name="special_date_changer">normal</field>
+      <field name="print_on_new_page">False</field>
+      <field name="show_domain">foldable</field>
+      <field name="hide_if_zero">False</field>
+      <field name="figure_type">float</field>
+      <field name="level">1</field>
+      <field name="code">BAP</field>
+      <field name="financial_report_id" ref="sprintit_balance_report"/>
+      <field name="display_name">PYSYVÄT VASTAAVAT</field>
+      <field name="sequence">0</field>
+      <field name="green_on_positive">True</field>
+    </record>
+    <record id="sprintit_balance_bav" model="account.financial.html.report.line">
+      <field name="formulas">balance = BAVO.balance + BASA.balance + BAR.balance + BARA.balance</field>
+      <field name="name">VAIHTUVAT VASTAAVAT</field>
+      <field name="special_date_changer">normal</field>
+      <field name="print_on_new_page">False</field>
+      <field name="show_domain">foldable</field>
+      <field name="hide_if_zero">False</field>
+      <field name="figure_type">float</field>
+      <field name="level">1</field>
+      <field name="code">BAV</field>
+      <field name="financial_report_id" ref="sprintit_balance_report"/>
+      <field name="display_name">VAIHTUVAT VASTAAVAT</field>
+      <field name="sequence">1</field>
+      <field name="green_on_positive">True</field>
+    </record>
+    <record id="sprintit_balance_bpo" model="account.financial.html.report.line">
+      <field name="formulas">balance = BPOS.balance + BPOY.balance + BPOA.balance + BPOM.balance + BPOE.balance + BPOT.balance</field>
+      <field name="name">OMA PÄÄOMA</field>
+      <field name="special_date_changer">normal</field>
+      <field name="print_on_new_page">True</field>
+      <field name="show_domain">foldable</field>
+      <field name="hide_if_zero">False</field>
+      <field name="figure_type">float</field>
+      <field name="level">1</field>
+      <field name="code">BPO</field>
+      <field name="financial_report_id" ref="sprintit_balance_report"/>
+      <field name="display_name">OMA PÄÄOMA</field>
+      <field name="sequence">4</field>
+      <field name="green_on_positive">True</field>
+    </record>
+    <record id="sprintit_balance_bps" model="account.financial.html.report.line">
+      <field name="formulas">balance = BPSP.balance + BPSV.balance</field>
+      <field name="name">TILINPÄÄTÖSSIIRTOJEN KERTYMÄ</field>
+      <field name="special_date_changer">normal</field>
+      <field name="print_on_new_page">False</field>
+      <field name="show_domain">foldable</field>
+      <field name="hide_if_zero">False</field>
+      <field name="figure_type">float</field>
+      <field name="level">1</field>
+      <field name="code">BPS</field>
+      <field name="financial_report_id" ref="sprintit_balance_report"/>
+      <field name="display_name">TILINPÄÄTÖSSIIRTOJEN KERTYMÄ</field>
+      <field name="sequence">5</field>
+      <field name="green_on_positive">True</field>
+    </record>
+    <record id="sprintit_balance_bpp" model="account.financial.html.report.line">
+      <field name="formulas">balance = BPPE.balance + BPPV.balance + BPPM.balance</field>
+      <field name="name">PAKOLLISET VARAUKSET</field>
+      <field name="special_date_changer">normal</field>
+      <field name="print_on_new_page">False</field>
+      <field name="show_domain">foldable</field>
+      <field name="hide_if_zero">False</field>
+      <field name="figure_type">float</field>
+      <field name="level">1</field>
+      <field name="code">BPP</field>
+      <field name="financial_report_id" ref="sprintit_balance_report"/>
+      <field name="display_name">PAKOLLISET VARAUKSET</field>
+      <field name="sequence">6</field>
+      <field name="green_on_positive">True</field>
+    </record>
+    <record id="sprintit_balance_bpv" model="account.financial.html.report.line">
+      <field name="formulas">balance = BPVP.balance + BPVL.balance</field>
+      <field name="name">VIERAS PÄÄOMA</field>
+      <field name="special_date_changer">normal</field>
+      <field name="print_on_new_page">False</field>
+      <field name="show_domain">foldable</field>
+      <field name="hide_if_zero">False</field>
+      <field name="figure_type">float</field>
+      <field name="level">1</field>
+      <field name="code">BPV</field>
+      <field name="financial_report_id" ref="sprintit_balance_report"/>
+      <field name="display_name">VIERAS PÄÄOMA</field>
+      <field name="sequence">7</field>
+      <field name="green_on_positive">True</field>
+    </record>
+    <record id="sprintit_balance_baa1" model="account.financial.html.report.line">
+      <field name="formulas">balance = BAKEH.balance + BAIPR.balance + BAGW.balance + BAMPM.balance + BAA1E.balance</field>
+      <field name="name">Aineettomat hyödykkeet</field>
+      <field name="special_date_changer">normal</field>
+      <field name="print_on_new_page">False</field>
+      <field name="show_domain">foldable</field>
+      <field name="hide_if_zero">False</field>
+      <field name="figure_type">float</field>
+      <field name="level">2</field>
+      <field name="code">BAA1</field>
+      <field name="parent_id" ref="sprintit_balance_bap"/>
+      <field name="display_name">Aineettomat hyödykkeet</field>
+      <field name="sequence">0</field>
+      <field name="green_on_positive">True</field>
+    </record>
+    <record id="sprintit_balance_bavo" model="account.financial.html.report.line">
+      <field name="formulas">balance = BAVOA.balance + BAVOK.balance + BAVOV.balance + BAVOM.balance + BAVOE.balance</field>
+      <field name="groupby">account_id</field>
+      <field name="name">Vaihto-omaisuus</field>
+      <field name="special_date_changer">normal</field>
+      <field name="print_on_new_page">False</field>
+      <field name="show_domain">foldable</field>
+      <field name="hide_if_zero">False</field>
+      <field name="figure_type">float</field>
+      <field name="level">2</field>
+      <field name="code">BAVO</field>
+      <field name="parent_id" ref="sprintit_balance_bav"/>
+      <field name="display_name">Vaihto-omaisuus</field>
+      <field name="sequence">0</field>
+      <field name="green_on_positive">True</field>
+    </record>
+    <record id="sprintit_balance_bpos" model="account.financial.html.report.line">
+      <field name="formulas">balance = -sum.balance</field>
+      <field name="groupby">account_id</field>
+      <field name="name">Osake-, osuus- tai muu vastaava pääoma</field>
+      <field name="special_date_changer">normal</field>
+      <field name="print_on_new_page">False</field>
+      <field name="show_domain">foldable</field>
+      <field name="hide_if_zero">False</field>
+      <field name="figure_type">float</field>
+      <field name="level">2</field>
+      <field name="code">BPOS</field>
+      <field name="parent_id" ref="sprintit_balance_bpo"/>
+      <field name="display_name">Osake-, osuus- tai muu vastaava pääoma</field>
+      <field name="domain" eval="[('account_id.tag_ids', 'in', [ref('l10n_fi.account_tag_stock_capital')])]"/>
+      <field name="sequence">0</field>
+      <field name="green_on_positive">True</field>
+    </record>
+    <record id="sprintit_balance_bpsp" model="account.financial.html.report.line">
+      <field name="formulas">balance = -sum.balance</field>
+      <field name="groupby">account_id</field>
+      <field name="name">Poistoero</field>
+      <field name="special_date_changer">normal</field>
+      <field name="print_on_new_page">False</field>
+      <field name="show_domain">foldable</field>
+      <field name="hide_if_zero">False</field>
+      <field name="figure_type">float</field>
+      <field name="level">2</field>
+      <field name="code">BPSP</field>
+      <field name="parent_id" ref="sprintit_balance_bps"/>
+      <field name="display_name">Poistoero</field>
+      <field name="domain" eval="[('account_id.tag_ids', 'in', [ref('l10n_fi.account_tag_depreciation_difference')])]"/>
+      <field name="sequence">0</field>
+      <field name="green_on_positive">True</field>
+    </record>
+    <record id="sprintit_balance_bppe" model="account.financial.html.report.line">
+      <field name="formulas">balance = -sum.balance</field>
+      <field name="groupby">account_id</field>
+      <field name="name">Eläkevaraukset</field>
+      <field name="special_date_changer">normal</field>
+      <field name="print_on_new_page">False</field>
+      <field name="show_domain">foldable</field>
+      <field name="hide_if_zero">False</field>
+      <field name="figure_type">float</field>
+      <field name="level">2</field>
+      <field name="code">BPPE</field>
+      <field name="parent_id" ref="sprintit_balance_bpp"/>
+      <field name="display_name">Eläkevaraukset</field>
+      <field name="domain" eval="[('account_id.tag_ids', 'in', [ref('l10n_fi.account_tag_provisions_for_pensions')])]"/>
+      <field name="sequence">0</field>
+      <field name="green_on_positive">True</field>
+    </record>
+    <record id="sprintit_balance_bpvp" model="account.financial.html.report.line">
+      <field name="formulas">balance = BPVPP.balance + BPVPJ.balance + BPVPV.balance + BPVPL.balance + BPVPT.balance + BPVPE.balance+ BPVPO.balance + BPVPX.balance + BPVPK.balance + BPVPY.balance + BPVPD.balance+ BPVPM.balance + BPVPS.balance</field>
+      <field name="name">Pitkäaikainen</field>
+      <field name="special_date_changer">normal</field>
+      <field name="print_on_new_page">False</field>
+      <field name="show_domain">foldable</field>
+      <field name="hide_if_zero">False</field>
+      <field name="figure_type">float</field>
+      <field name="level">2</field>
+      <field name="code">BPVP</field>
+      <field name="parent_id" ref="sprintit_balance_bpv"/>
+      <field name="display_name">Pitkäaikainen</field>
+      <field name="sequence">0</field>
+      <field name="green_on_positive">True</field>
+    </record>
+    <record id="sprintit_balance_baa2" model="account.financial.html.report.line">
+      <field name="formulas">balance = BAMA.balance + BARR.balance + BAKO.balance + BAHY.balance + BAKE.balance</field>
+      <field name="name">Aineelliset hyödykkeet</field>
+      <field name="special_date_changer">normal</field>
+      <field name="print_on_new_page">False</field>
+      <field name="show_domain">foldable</field>
+      <field name="hide_if_zero">False</field>
+      <field name="figure_type">float</field>
+      <field name="level">2</field>
+      <field name="code">BAA2</field>
+      <field name="parent_id" ref="sprintit_balance_bap"/>
+      <field name="display_name">Aineelliset hyödykkeet</field>
+      <field name="sequence">1</field>
+      <field name="green_on_positive">True</field>
+    </record>
+    <record id="sprintit_balance_basa" model="account.financial.html.report.line">
+      <field name="formulas">balance = BASP.balance + BASL.balance</field>
+      <field name="name">Saamiset</field>
+      <field name="special_date_changer">normal</field>
+      <field name="print_on_new_page">False</field>
+      <field name="show_domain">foldable</field>
+      <field name="hide_if_zero">False</field>
+      <field name="figure_type">float</field>
+      <field name="level">2</field>
+      <field name="code">BASA</field>
+      <field name="parent_id" ref="sprintit_balance_bav"/>
+      <field name="display_name">Saamiset</field>
+      <field name="sequence">1</field>
+      <field name="green_on_positive">True</field>
+    </record>
+    <record id="sprintit_balance_bpoy" model="account.financial.html.report.line">
+      <field name="formulas">balance = -sum.balance</field>
+      <field name="groupby">account_id</field>
+      <field name="name">Ylikurssirahasto</field>
+      <field name="special_date_changer">normal</field>
+      <field name="print_on_new_page">False</field>
+      <field name="show_domain">foldable</field>
+      <field name="hide_if_zero">False</field>
+      <field name="figure_type">float</field>
+      <field name="level">2</field>
+      <field name="code">BPOY</field>
+      <field name="parent_id" ref="sprintit_balance_bpo"/>
+      <field name="display_name">Ylikurssirahasto</field>
+      <field name="domain" eval="[('account_id.tag_ids', 'in', [ref('l10n_fi.account_tag_share_premium_account')])]"/>
+      <field name="sequence">1</field>
+      <field name="green_on_positive">True</field>
+    </record>
+    <record id="sprintit_balance_bpsv" model="account.financial.html.report.line">
+      <field name="formulas">balance = -sum.balance</field>
+      <field name="groupby">account_id</field>
+      <field name="name">Verotusperäiset varaukset</field>
+      <field name="special_date_changer">normal</field>
+      <field name="print_on_new_page">False</field>
+      <field name="show_domain">foldable</field>
+      <field name="hide_if_zero">False</field>
+      <field name="figure_type">float</field>
+      <field name="level">2</field>
+      <field name="code">BPSV</field>
+      <field name="parent_id" ref="sprintit_balance_bps"/>
+      <field name="display_name">Verotusperäiset varaukset</field>
+      <field name="domain" eval="[('account_id.tag_ids', 'in', [ref('l10n_fi.account_tag_tax_based_reservations')])]"/>
+      <field name="sequence">1</field>
+      <field name="green_on_positive">True</field>
+    </record>
+    <record id="sprintit_balance_bppv" model="account.financial.html.report.line">
+      <field name="formulas">balance = -sum.balance</field>
+      <field name="groupby">account_id</field>
+      <field name="name">Verovaraukset</field>
+      <field name="special_date_changer">normal</field>
+      <field name="print_on_new_page">False</field>
+      <field name="show_domain">foldable</field>
+      <field name="hide_if_zero">False</field>
+      <field name="figure_type">float</field>
+      <field name="level">2</field>
+      <field name="code">BPPV</field>
+      <field name="parent_id" ref="sprintit_balance_bpp"/>
+      <field name="display_name">Verovaraukset</field>
+      <field name="domain" eval="[('account_id.tag_ids', 'in', [ref('l10n_fi.account_tag_tax_provisions')])]"/>
+      <field name="sequence">1</field>
+      <field name="green_on_positive">True</field>
+    </record>
+    <record id="sprintit_balance_bpvl" model="account.financial.html.report.line">
+      <field name="formulas">balance = BPVLP.balance + BPVLJ.balance + BPVLV.balance + BPVLL.balance + BPVLT.balance + BPVLE.balance+ BPVLO.balance + BPVLX.balance + BPVLK.balance + BPVLY.balance + BPVLD.balance+ BPVLM.balance + BPVLS.balance</field>
+      <field name="name">Lyhytaikainen</field>
+      <field name="special_date_changer">normal</field>
+      <field name="print_on_new_page">False</field>
+      <field name="show_domain">foldable</field>
+      <field name="hide_if_zero">False</field>
+      <field name="figure_type">float</field>
+      <field name="level">2</field>
+      <field name="code">BPVL</field>
+      <field name="parent_id" ref="sprintit_balance_bpv"/>
+      <field name="display_name">Lyhytaikainen</field>
+      <field name="sequence">1</field>
+      <field name="green_on_positive">True</field>
+    </record>
+    <record id="sprintit_balance_bas" model="account.financial.html.report.line">
+      <field name="formulas">balance = BAOK.balance + BASK.balance + BAOY.balance + BASY.balance + BAMO.balance + BAMS.balance</field>
+      <field name="name">Sijoitukset</field>
+      <field name="special_date_changer">normal</field>
+      <field name="print_on_new_page">False</field>
+      <field name="show_domain">foldable</field>
+      <field name="hide_if_zero">False</field>
+      <field name="figure_type">float</field>
+      <field name="level">2</field>
+      <field name="code">BAS</field>
+      <field name="parent_id" ref="sprintit_balance_bap"/>
+      <field name="display_name">Sijoitukset</field>
+      <field name="sequence">2</field>
+      <field name="green_on_positive">True</field>
+    </record>
+    <record id="sprintit_balance_bppm" model="account.financial.html.report.line">
+      <field name="formulas">balance = -sum.balance</field>
+      <field name="groupby">account_id</field>
+      <field name="name">Muut pakolliset varaukset</field>
+      <field name="special_date_changer">normal</field>
+      <field name="print_on_new_page">False</field>
+      <field name="show_domain">foldable</field>
+      <field name="hide_if_zero">False</field>
+      <field name="figure_type">float</field>
+      <field name="level">2</field>
+      <field name="code">BPPM</field>
+      <field name="parent_id" ref="sprintit_balance_bpp"/>
+      <field name="display_name">Muut pakolliset varaukset</field>
+      <field name="domain" eval="[('account_id.tag_ids', 'in', [ref('l10n_fi.account_tag_other_provisions')])]"/>
+      <field name="sequence">2</field>
+      <field name="green_on_positive">True</field>
+    </record>
+    <record id="sprintit_balance_bpoa" model="account.financial.html.report.line">
+      <field name="formulas">balance = -sum.balance</field>
+      <field name="groupby">account_id</field>
+      <field name="name">Arvonkorotusrahasto</field>
+      <field name="special_date_changer">normal</field>
+      <field name="print_on_new_page">False</field>
+      <field name="show_domain">foldable</field>
+      <field name="hide_if_zero">False</field>
+      <field name="figure_type">float</field>
+      <field name="level">2</field>
+      <field name="code">BPOA</field>
+      <field name="parent_id" ref="sprintit_balance_bpo"/>
+      <field name="display_name">Arvonkorotusrahasto</field>
+      <field name="domain" eval="[('account_id.tag_ids', 'in', [ref('l10n_fi.account_tag_revaluation_reserve')])]"/>
+      <field name="sequence">2</field>
+      <field name="green_on_positive">True</field>
+    </record>
+    <record id="sprintit_balance_bar" model="account.financial.html.report.line">
+      <field name="formulas">balance = BARM.balance + BARMA.balance + BARK.balance</field>
+      <field name="name">Rahoitusarvopaperit</field>
+      <field name="special_date_changer">normal</field>
+      <field name="print_on_new_page">False</field>
+      <field name="show_domain">foldable</field>
+      <field name="hide_if_zero">False</field>
+      <field name="figure_type">float</field>
+      <field name="level">2</field>
+      <field name="code">BAR</field>
+      <field name="parent_id" ref="sprintit_balance_bav"/>
+      <field name="display_name">Rahoitusarvopaperit</field>
+      <field name="sequence">2</field>
+      <field name="green_on_positive">True</field>
+    </record>
+    <record id="sprintit_balance_bpom" model="account.financial.html.report.line">
+      <field name="formulas">balance = SVOP.balance + VARA.balance + JARJ.balance + KAYV.balance + MRAH.balance</field>
+      <field name="groupby">account_id</field>
+      <field name="name">Muut rahastot</field>
+      <field name="special_date_changer">normal</field>
+      <field name="print_on_new_page">False</field>
+      <field name="show_domain">foldable</field>
+      <field name="hide_if_zero">False</field>
+      <field name="figure_type">float</field>
+      <field name="level">2</field>
+      <field name="code">BPOM</field>
+      <field name="parent_id" ref="sprintit_balance_bpo"/>
+      <field name="display_name">Muut rahastot</field>
+      <field name="sequence">3</field>
+      <field name="green_on_positive">True</field>
+    </record>
+    <record id="sprintit_balance_bara" model="account.financial.html.report.line">
+      <field name="formulas">balance = sum.balance</field>
+      <field name="groupby">account_id</field>
+      <field name="name">Rahat ja pankkisaamiset</field>
+      <field name="special_date_changer">normal</field>
+      <field name="print_on_new_page">False</field>
+      <field name="show_domain">foldable</field>
+      <field name="hide_if_zero">False</field>
+      <field name="figure_type">float</field>
+      <field name="level">2</field>
+      <field name="code">BARA</field>
+      <field name="parent_id" ref="sprintit_balance_bav"/>
+      <field name="display_name">Rahat ja pankkisaamiset</field>
+      <field name="domain" eval="[('account_id.tag_ids', 'in', [ref('l10n_fi.account_tag_liquidity')])]"/>
+      <field name="sequence">3</field>
+      <field name="green_on_positive">True</field>
+    </record>
+    <record id="sprintit_balance_bpoe" model="account.financial.html.report.line">
+      <field name="formulas">balance = -sum.balance</field>
+      <field name="groupby">account_id</field>
+      <field name="name">Edellisten tilikausien voitto (tappio)</field>
+      <field name="special_date_changer">normal</field>
+      <field name="print_on_new_page">False</field>
+      <field name="show_domain">foldable</field>
+      <field name="hide_if_zero">False</field>
+      <field name="figure_type">float</field>
+      <field name="level">2</field>
+      <field name="code">BPOE</field>
+      <field name="parent_id" ref="sprintit_balance_bpo"/>
+      <field name="display_name">Edellisten tilikausien voitto (tappio)</field>
+      <field name="domain" eval="[('account_id.tag_ids', 'in', [ref('l10n_fi.account_tag_retained_earnings')])]"/>
+      <field name="sequence">4</field>
+      <field name="green_on_positive">True</field>
+    </record>
+    <record id="sprintit_balance_bpot" model="account.financial.html.report.line">
+      <field name="formulas">balance = -sum.balance</field>
+      <field name="name">Tilikauden voitto (tappio)</field>
+      <field name="special_date_changer">from_fiscalyear</field>
+      <field name="print_on_new_page">False</field>
+      <field name="show_domain">never</field>
+      <field name="hide_if_zero">False</field>
+      <field name="figure_type">float</field>
+      <field name="level">2</field>
+      <field name="code">BPOT</field>
+      <field name="parent_id" ref="sprintit_balance_bpo"/>
+      <field name="display_name">Tilikauden voitto (tappio)</field>
+      <field name="domain" eval="[('account_id.tag_ids', 'in', [ref('l10n_fi.account_tag_sales'),ref('l10n_fi.account_tag_sales_adjustment_items'),ref('l10n_fi.account_tag_manufacturing_warehouse_change'),ref('l10n_fi.account_tag_manufacturing_own_use'),ref('l10n_fi.account_tag_income_other'),ref('l10n_fi.account_tag_purchases'),ref('l10n_fi.account_tag_purchases_adjustment_items'),ref('l10n_fi.account_tag_change_in_inventories'),ref('l10n_fi.account_tag_external_services'),ref('l10n_fi.account_tag_wages_and_salaries_in_production'),ref('l10n_fi.account_tag_wages_and_salaries_other'),ref('l10n_fi.account_tag_pension_costs_of_production'),ref('l10n_fi.account_tag_pension_costs_other'),ref('l10n_fi.account_tag_other_additional_expenses_production'),ref('l10n_fi.account_tag_other_additional_expenses_other'),ref('l10n_fi.account_tag_depreciation_according_to_plan'),ref('l10n_fi.account_tag_impairment_of_fixed_assets'),ref('l10n_fi.account_tag_impairment_losses_financial_assets_current_assets'),ref('l10n_fi.account_tag_personnel_other'),ref('l10n_fi.account_tag_premises_costs'),ref('l10n_fi.account_tag_vehicle_expenses'),ref('l10n_fi.account_tag_it_expenses'),ref('l10n_fi.account_tag_in_machinery_and_equipment_expenses'),ref('l10n_fi.account_tag_travelling'),ref('l10n_fi.account_tag_representation'),ref('l10n_fi.account_tag_selling_expenses'),ref('l10n_fi.account_tag_marketing_expenses'),ref('l10n_fi.account_tag_research_and_development'),ref('l10n_fi.account_tag_administrative_services'),ref('l10n_fi.account_tag_other_administrative_expenses'),ref('l10n_fi.account_tag_other_fixed_costs'),ref('l10n_fi.account_tag_income_from_shares_in_group'),ref('l10n_fi.account_tag_income_from_associated_company'),ref('l10n_fi.account_tag_investment_income_other_current_assets_group'),ref('l10n_fi.account_tag_other_investment_income_from_fixed_assets'),ref('l10n_fi.account_tag_interest_and_financial_income_from_group'),ref('l10n_fi.account_tag_other_interest_and_financial_income'),ref('l10n_fi.account_tag_impairment_losses_on_investments_in_fixed_assets'),ref('l10n_fi.account_tag_financial_expenses_group'),ref('l10n_fi.account_tag_other_financial_expenses'),ref('l10n_fi.account_tag_change_in_depreciation_difference'),ref('l10n_fi.account_tag_change_in_provisions'),ref('l10n_fi.account_tag_group_contribution'),ref('l10n_fi.account_tag_taxes_for_the_period'),ref('l10n_fi.account_tag_deferred_taxes'),ref('l10n_fi.account_tag_other_tax')])]"/>
+      <field name="sequence">5</field>
+      <field name="green_on_positive">True</field>
+    </record>
+    <record id="sprintit_balance_basp" model="account.financial.html.report.line">
+      <field name="formulas">balance = BASPM.balance + BASPK.balance + BASPY.balance + BASPD.balance + BSPL.balance + BASPU.balance+ BASMO.balance + BSPS.balance</field>
+      <field name="name">Pitkäaikaiset</field>
+      <field name="special_date_changer">normal</field>
+      <field name="print_on_new_page">False</field>
+      <field name="show_domain">foldable</field>
+      <field name="hide_if_zero">False</field>
+      <field name="figure_type">float</field>
+      <field name="level">3</field>
+      <field name="code">BASP</field>
+      <field name="parent_id" ref="sprintit_balance_basa"/>
+      <field name="display_name">Pitkäaikaiset</field>
+      <field name="sequence">0</field>
+      <field name="green_on_positive">True</field>
+    </record>
+    <record id="sprintit_balance_bakeh" model="account.financial.html.report.line">
+      <field name="formulas">balance = sum.balance</field>
+      <field name="groupby">account_id</field>
+      <field name="name">Kehittämismenot</field>
+      <field name="special_date_changer">normal</field>
+      <field name="print_on_new_page">False</field>
+      <field name="show_domain">foldable</field>
+      <field name="hide_if_zero">False</field>
+      <field name="figure_type">float</field>
+      <field name="level">3</field>
+      <field name="code">BAKEH</field>
+      <field name="parent_id" ref="sprintit_balance_baa1"/>
+      <field name="display_name">Kehittämismenot</field>
+      <field name="domain" eval="[('account_id.tag_ids', 'in', [ref('l10n_fi.account_tag_development_costs')])]"/>
+      <field name="sequence">0</field>
+      <field name="green_on_positive">True</field>
+    </record>
+    <record id="sprintit_balance_bama" model="account.financial.html.report.line">
+      <field name="formulas">balance = MAAO.balance + MAAV.balance</field>
+      <field name="name">Maa- ja vesialueet</field>
+      <field name="special_date_changer">normal</field>
+      <field name="print_on_new_page">False</field>
+      <field name="show_domain">foldable</field>
+      <field name="hide_if_zero">False</field>
+      <field name="figure_type">float</field>
+      <field name="level">3</field>
+      <field name="code">BAMA</field>
+      <field name="parent_id" ref="sprintit_balance_baa2"/>
+      <field name="display_name">Maa- ja vesialueet</field>
+      <field name="sequence">0</field>
+      <field name="green_on_positive">True</field>
+    </record>
+    <record id="sprintit_balance_bark" model="account.financial.html.report.line">
+      <field name="formulas">balance = sum.balance</field>
+      <field name="groupby">account_id</field>
+      <field name="name">Osuudet saman konsernin yrityksissä</field>
+      <field name="special_date_changer">normal</field>
+      <field name="print_on_new_page">False</field>
+      <field name="show_domain">foldable</field>
+      <field name="hide_if_zero">False</field>
+      <field name="figure_type">float</field>
+      <field name="level">3</field>
+      <field name="code">BARK</field>
+      <field name="parent_id" ref="sprintit_balance_bar"/>
+      <field name="display_name">Osuudet saman konsernin yrityksissä</field>
+      <field name="domain" eval="[('account_id.tag_ids', 'in', [ref('l10n_fi.account_tag_shares_in_the_consolidated_financial_securities')])]"/>
+      <field name="sequence">0</field>
+      <field name="green_on_positive">True</field>
+    </record>
+    <record id="sprintit_balance_baok" model="account.financial.html.report.line">
+      <field name="formulas">balance = sum.balance</field>
+      <field name="groupby">account_id</field>
+      <field name="name">Osuudet saman konsernin yrityksissä</field>
+      <field name="special_date_changer">normal</field>
+      <field name="print_on_new_page">False</field>
+      <field name="show_domain">foldable</field>
+      <field name="hide_if_zero">False</field>
+      <field name="figure_type">float</field>
+      <field name="level">3</field>
+      <field name="code">BAOK</field>
+      <field name="parent_id" ref="sprintit_balance_bas"/>
+      <field name="display_name">Osuudet saman konsernin yrityksissä</field>
+      <field name="domain" eval="[('account_id.tag_ids', 'in', [ref('l10n_fi.account_tag_shares_in_group_companies')])]"/>
+      <field name="sequence">0</field>
+      <field name="green_on_positive">True</field>
+    </record>
+    <record id="sprintit_balance_bavoa" model="account.financial.html.report.line">
+      <field name="formulas">balance = sum.balance</field>
+      <field name="groupby">account_id</field>
+      <field name="name">Aineet ja tarvikkeet</field>
+      <field name="special_date_changer">normal</field>
+      <field name="print_on_new_page">False</field>
+      <field name="show_domain">foldable</field>
+      <field name="hide_if_zero">False</field>
+      <field name="figure_type">float</field>
+      <field name="level">3</field>
+      <field name="code">BAVOA</field>
+      <field name="parent_id" ref="sprintit_balance_bavo"/>
+      <field name="display_name">Aineet ja tarvikkeet</field>
+      <field name="domain" eval="[('account_id.tag_ids', 'in', [ref('l10n_fi.account_tag_materials_and_supplies_inventories')])]"/>
+      <field name="sequence">0</field>
+      <field name="green_on_positive">True</field>
+    </record>
+    <record id="sprintit_balance_bask" model="account.financial.html.report.line">
+      <field name="formulas">balance = sum.balance</field>
+      <field name="groupby">account_id</field>
+      <field name="name">Saamiset saman konsernin yrityksiltä</field>
+      <field name="special_date_changer">normal</field>
+      <field name="print_on_new_page">False</field>
+      <field name="show_domain">foldable</field>
+      <field name="hide_if_zero">False</field>
+      <field name="figure_type">float</field>
+      <field name="level">3</field>
+      <field name="code">BASK</field>
+      <field name="parent_id" ref="sprintit_balance_bas"/>
+      <field name="display_name">Saamiset saman konsernin yrityksiltä</field>
+      <field name="domain" eval="[('account_id.tag_ids', 'in', [ref('l10n_fi.account_tag_receivables_from_associated_companies_investments')])]"/>
+      <field name="sequence">1</field>
+      <field name="green_on_positive">True</field>
+    </record>
+    <record id="sprintit_balance_baipr" model="account.financial.html.report.line">
+      <field name="formulas">balance = sum.balance</field>
+      <field name="groupby">account_id</field>
+      <field name="name">Aineettomat oikeudet</field>
+      <field name="special_date_changer">normal</field>
+      <field name="print_on_new_page">False</field>
+      <field name="show_domain">foldable</field>
+      <field name="hide_if_zero">False</field>
+      <field name="figure_type">float</field>
+      <field name="level">3</field>
+      <field name="code">BAIPR</field>
+      <field name="parent_id" ref="sprintit_balance_baa1"/>
+      <field name="display_name">Aineettomat oikeudet</field>
+      <field name="domain" eval="[('account_id.tag_ids', 'in', [ref('l10n_fi.account_tag_immaterial_rights')])]"/>
+      <field name="sequence">1</field>
+      <field name="green_on_positive">True</field>
+    </record>
+    <record id="sprintit_balance_barr" model="account.financial.html.report.line">
+      <field name="formulas">balance = BRRO.balance + BRRV.balance</field>
+      <field name="name">Rakennukset ja rakennelmat</field>
+      <field name="special_date_changer">normal</field>
+      <field name="print_on_new_page">False</field>
+      <field name="show_domain">foldable</field>
+      <field name="hide_if_zero">False</field>
+      <field name="figure_type">float</field>
+      <field name="level">3</field>
+      <field name="code">BARR</field>
+      <field name="parent_id" ref="sprintit_balance_baa2"/>
+      <field name="display_name">Rakennukset ja rakennelmat</field>
+      <field name="sequence">1</field>
+      <field name="green_on_positive">True</field>
+    </record>
+    <record id="sprintit_balance_bavok" model="account.financial.html.report.line">
+      <field name="formulas">balance = sum.balance</field>
+      <field name="groupby">account_id</field>
+      <field name="name">Keskeneräiset tuotteet</field>
+      <field name="special_date_changer">normal</field>
+      <field name="print_on_new_page">False</field>
+      <field name="show_domain">foldable</field>
+      <field name="hide_if_zero">False</field>
+      <field name="figure_type">float</field>
+      <field name="level">3</field>
+      <field name="code">BAVOK</field>
+      <field name="parent_id" ref="sprintit_balance_bavo"/>
+      <field name="display_name">Keskeneräiset tuotteet</field>
+      <field name="domain" eval="[('account_id.tag_ids', 'in', [ref('l10n_fi.account_tag_work_in_progress')])]"/>
+      <field name="sequence">1</field>
+      <field name="green_on_positive">True</field>
+    </record>
+    <record id="sprintit_balance_basl" model="account.financial.html.report.line">
+      <field name="formulas">balance = BASLM.balance + BASLK.balance + BASLY.balance + BASLL.balance + BASLD.balance + BASLU.balance+ BSLMO.balance + BASLS.balance</field>
+      <field name="name">Lyhytaikaiset</field>
+      <field name="special_date_changer">normal</field>
+      <field name="print_on_new_page">False</field>
+      <field name="show_domain">foldable</field>
+      <field name="hide_if_zero">False</field>
+      <field name="figure_type">float</field>
+      <field name="level">3</field>
+      <field name="code">BASL</field>
+      <field name="parent_id" ref="sprintit_balance_basa"/>
+      <field name="display_name">Lyhytaikaiset</field>
+      <field name="sequence">1</field>
+      <field name="green_on_positive">True</field>
+    </record>
+    <record id="sprintit_balance_barm" model="account.financial.html.report.line">
+      <field name="formulas">balance = sum.balance</field>
+      <field name="groupby">account_id</field>
+      <field name="name">Muut osakkeet ja osuudet</field>
+      <field name="special_date_changer">normal</field>
+      <field name="print_on_new_page">False</field>
+      <field name="show_domain">foldable</field>
+      <field name="hide_if_zero">False</field>
+      <field name="figure_type">float</field>
+      <field name="level">3</field>
+      <field name="code">BARM</field>
+      <field name="parent_id" ref="sprintit_balance_bar"/>
+      <field name="display_name">Muut osakkeet ja osuudet</field>
+      <field name="domain" eval="[('account_id.tag_ids', 'in', [ref('l10n_fi.account_tag_other_shares_and_marketable_securities')])]"/>
+      <field name="sequence">1</field>
+      <field name="green_on_positive">True</field>
+    </record>
+    <record id="sprintit_balance_bagw" model="account.financial.html.report.line">
+      <field name="formulas">balance = sum.balance</field>
+      <field name="groupby">account_id</field>
+      <field name="name">Liikearvo</field>
+      <field name="special_date_changer">normal</field>
+      <field name="print_on_new_page">False</field>
+      <field name="show_domain">foldable</field>
+      <field name="hide_if_zero">False</field>
+      <field name="figure_type">float</field>
+      <field name="level">3</field>
+      <field name="code">BAGW</field>
+      <field name="parent_id" ref="sprintit_balance_baa1"/>
+      <field name="display_name">Liikearvo</field>
+      <field name="domain" eval="[('account_id.tag_ids', 'in', [ref('l10n_fi.account_tag_goodwill')])]"/>
+      <field name="sequence">2</field>
+      <field name="green_on_positive">True</field>
+    </record>
+    <record id="sprintit_balance_bako" model="account.financial.html.report.line">
+      <field name="formulas">balance = sum.balance</field>
+      <field name="groupby">account_id</field>
+      <field name="name">Koneet ja kalusto</field>
+      <field name="special_date_changer">normal</field>
+      <field name="print_on_new_page">False</field>
+      <field name="show_domain">foldable</field>
+      <field name="hide_if_zero">False</field>
+      <field name="figure_type">float</field>
+      <field name="level">3</field>
+      <field name="code">BAKO</field>
+      <field name="parent_id" ref="sprintit_balance_baa2"/>
+      <field name="display_name">Koneet ja kalusto</field>
+      <field name="domain" eval="[('account_id.tag_ids', 'in', [ref('l10n_fi.account_tag_machines_and_hardware')])]"/>
+      <field name="sequence">2</field>
+      <field name="green_on_positive">True</field>
+    </record>
+    <record id="sprintit_balance_barma" model="account.financial.html.report.line">
+      <field name="formulas">balance = sum.balance</field>
+      <field name="groupby">account_id</field>
+      <field name="name">Muut arvopaperit</field>
+      <field name="special_date_changer">normal</field>
+      <field name="print_on_new_page">False</field>
+      <field name="show_domain">foldable</field>
+      <field name="hide_if_zero">False</field>
+      <field name="figure_type">float</field>
+      <field name="level">3</field>
+      <field name="code">BARMA</field>
+      <field name="parent_id" ref="sprintit_balance_bar"/>
+      <field name="display_name">Muut arvopaperit</field>
+      <field name="domain" eval="[('account_id.tag_ids', 'in', [ref('l10n_fi.account_tag_other_financial_assets')])]"/>
+      <field name="sequence">2</field>
+      <field name="green_on_positive">True</field>
+    </record>
+    <record id="sprintit_balance_bavov" model="account.financial.html.report.line">
+      <field name="formulas">balance = sum.balance</field>
+      <field name="groupby">account_id</field>
+      <field name="name">Valmiit tuotteet/tavarat</field>
+      <field name="special_date_changer">normal</field>
+      <field name="print_on_new_page">False</field>
+      <field name="show_domain">foldable</field>
+      <field name="hide_if_zero">False</field>
+      <field name="figure_type">float</field>
+      <field name="level">3</field>
+      <field name="code">BAVOV</field>
+      <field name="parent_id" ref="sprintit_balance_bavo"/>
+      <field name="display_name">Valmiit tuotteet/tavarat</field>
+      <field name="domain" eval="[('account_id.tag_ids', 'in', [ref('l10n_fi.account_tag_finished_goods_inventories')])]"/>
+      <field name="sequence">2</field>
+      <field name="green_on_positive">True</field>
+    </record>
+    <record id="sprintit_balance_baoy" model="account.financial.html.report.line">
+      <field name="formulas">balance = sum.balance</field>
+      <field name="groupby">account_id</field>
+      <field name="name">Osuudet omistusyhteysyrityksissä</field>
+      <field name="special_date_changer">normal</field>
+      <field name="print_on_new_page">False</field>
+      <field name="show_domain">foldable</field>
+      <field name="hide_if_zero">False</field>
+      <field name="figure_type">float</field>
+      <field name="level">3</field>
+      <field name="code">BAOY</field>
+      <field name="parent_id" ref="sprintit_balance_bas"/>
+      <field name="display_name">Osuudet omistusyhteysyrityksissä</field>
+      <field name="domain" eval="[('account_id.tag_ids', 'in', [ref('l10n_fi.account_tag_shares_in_associated_companies')])]"/>
+      <field name="sequence">2</field>
+      <field name="green_on_positive">True</field>
+    </record>
+    <record id="sprintit_balance_bavom" model="account.financial.html.report.line">
+      <field name="formulas">balance = sum.balance</field>
+      <field name="groupby">account_id</field>
+      <field name="name">Muu vaihto-omaisuus</field>
+      <field name="special_date_changer">normal</field>
+      <field name="print_on_new_page">False</field>
+      <field name="show_domain">foldable</field>
+      <field name="hide_if_zero">False</field>
+      <field name="figure_type">float</field>
+      <field name="level">3</field>
+      <field name="code">BAVOM</field>
+      <field name="parent_id" ref="sprintit_balance_bavo"/>
+      <field name="display_name">Muu vaihto-omaisuus</field>
+      <field name="domain" eval="[('account_id.tag_ids', 'in', [ref('l10n_fi.account_tag_goods_in_transit'),ref('l10n_fi.account_tag_other_current_assets')])]"/>
+      <field name="sequence">3</field>
+      <field name="green_on_positive">True</field>
+    </record>
+    <record id="sprintit_balance_basy" model="account.financial.html.report.line">
+      <field name="formulas">balance = sum.balance</field>
+      <field name="groupby">account_id</field>
+      <field name="name">Saamiset omistusyhteysyrityksiltä</field>
+      <field name="special_date_changer">normal</field>
+      <field name="print_on_new_page">False</field>
+      <field name="show_domain">foldable</field>
+      <field name="hide_if_zero">False</field>
+      <field name="figure_type">float</field>
+      <field name="level">3</field>
+      <field name="code">BASY</field>
+      <field name="parent_id" ref="sprintit_balance_bas"/>
+      <field name="display_name">Saamiset omistusyhteysyrityksiltä</field>
+      <field name="sequence">3</field>
+      <field name="green_on_positive">True</field>
+    </record>
+    <record id="sprintit_balance_bampm" model="account.financial.html.report.line">
+      <field name="formulas">balance = sum.balance</field>
+      <field name="groupby">account_id</field>
+      <field name="name">Muut pitkävaikutteiset menot</field>
+      <field name="special_date_changer">normal</field>
+      <field name="print_on_new_page">False</field>
+      <field name="show_domain">foldable</field>
+      <field name="hide_if_zero">False</field>
+      <field name="figure_type">float</field>
+      <field name="level">3</field>
+      <field name="code">BAMPM</field>
+      <field name="parent_id" ref="sprintit_balance_baa1"/>
+      <field name="display_name">Muut pitkävaikutteiset menot</field>
+      <field name="domain" eval="[('account_id.tag_ids', 'in', [ref('l10n_fi.account_tag_other_long_term_expenses')])]"/>
+      <field name="sequence">3</field>
+      <field name="green_on_positive">True</field>
+    </record>
+    <record id="sprintit_balance_bahy" model="account.financial.html.report.line">
+      <field name="formulas">balance = sum.balance</field>
+      <field name="groupby">account_id</field>
+      <field name="name">Muut aineelliset hyödykkeet</field>
+      <field name="special_date_changer">normal</field>
+      <field name="print_on_new_page">False</field>
+      <field name="show_domain">foldable</field>
+      <field name="hide_if_zero">False</field>
+      <field name="figure_type">float</field>
+      <field name="level">3</field>
+      <field name="code">BAHY</field>
+      <field name="parent_id" ref="sprintit_balance_baa2"/>
+      <field name="display_name">Muut aineelliset hyödykkeet</field>
+      <field name="domain" eval="[('account_id.tag_ids', 'in', [ref('l10n_fi.account_tag_other_tangible_assets')])]"/>
+      <field name="sequence">3</field>
+      <field name="green_on_positive">True</field>
+    </record>
+    <record id="sprintit_balance_baa1e" model="account.financial.html.report.line">
+      <field name="formulas">balance = sum.balance</field>
+      <field name="groupby">account_id</field>
+      <field name="name">Ennakkomaksut</field>
+      <field name="special_date_changer">normal</field>
+      <field name="print_on_new_page">False</field>
+      <field name="show_domain">foldable</field>
+      <field name="hide_if_zero">False</field>
+      <field name="figure_type">float</field>
+      <field name="level">3</field>
+      <field name="code">BAA1E</field>
+      <field name="parent_id" ref="sprintit_balance_baa1"/>
+      <field name="display_name">Ennakkomaksut</field>
+      <field name="domain" eval="[('account_id.tag_ids', 'in', [ref('l10n_fi.account_tag_advance_payments_intangible')])]"/>
+      <field name="sequence">4</field>
+      <field name="green_on_positive">True</field>
+    </record>
+    <record id="sprintit_balance_bake" model="account.financial.html.report.line">
+      <field name="formulas">balance = sum.balance</field>
+      <field name="groupby">account_id</field>
+      <field name="name">Ennakkomaksut ja keskeneräiset hankinnat</field>
+      <field name="special_date_changer">normal</field>
+      <field name="print_on_new_page">False</field>
+      <field name="show_domain">foldable</field>
+      <field name="hide_if_zero">False</field>
+      <field name="figure_type">float</field>
+      <field name="level">3</field>
+      <field name="code">BAKE</field>
+      <field name="parent_id" ref="sprintit_balance_baa2"/>
+      <field name="display_name">Ennakkomaksut ja keskeneräiset hankinnat</field>
+      <field name="domain" eval="[('account_id.tag_ids', 'in', [ref('l10n_fi.account_tag_payments_on_account_tangible')])]"/>
+      <field name="sequence">4</field>
+      <field name="green_on_positive">True</field>
+    </record>
+    <record id="sprintit_balance_bamo" model="account.financial.html.report.line">
+      <field name="formulas">balance = sum.balance</field>
+      <field name="groupby">account_id</field>
+      <field name="name">Muut osakkeet ja osuudet</field>
+      <field name="special_date_changer">normal</field>
+      <field name="print_on_new_page">False</field>
+      <field name="show_domain">foldable</field>
+      <field name="hide_if_zero">False</field>
+      <field name="figure_type">float</field>
+      <field name="level">3</field>
+      <field name="code">BAMO</field>
+      <field name="parent_id" ref="sprintit_balance_bas"/>
+      <field name="display_name">Muut osakkeet ja osuudet</field>
+      <field name="domain" eval="[('account_id.tag_ids', 'in', [ref('l10n_fi.account_tag_other_shares_and_participations')])]"/>
+      <field name="sequence">4</field>
+      <field name="green_on_positive">True</field>
+    </record>
+    <record id="sprintit_balance_bavoe" model="account.financial.html.report.line">
+      <field name="formulas">balance = sum.balance</field>
+      <field name="groupby">account_id</field>
+      <field name="name">Ennakkomaksut</field>
+      <field name="special_date_changer">normal</field>
+      <field name="print_on_new_page">False</field>
+      <field name="show_domain">foldable</field>
+      <field name="hide_if_zero">False</field>
+      <field name="figure_type">float</field>
+      <field name="level">3</field>
+      <field name="code">BAVOE</field>
+      <field name="parent_id" ref="sprintit_balance_bavo"/>
+      <field name="display_name">Ennakkomaksut</field>
+      <field name="domain" eval="[('account_id.tag_ids', 'in', [ref('l10n_fi.account_tag_advance_payments_for_property')])]"/>
+      <field name="sequence">4</field>
+      <field name="green_on_positive">True</field>
+    </record>
+    <record id="sprintit_balance_bams" model="account.financial.html.report.line">
+      <field name="formulas">balance = sum.balance</field>
+      <field name="groupby">account_id</field>
+      <field name="name">Muut saamiset</field>
+      <field name="special_date_changer">normal</field>
+      <field name="print_on_new_page">False</field>
+      <field name="show_domain">foldable</field>
+      <field name="hide_if_zero">False</field>
+      <field name="figure_type">float</field>
+      <field name="level">3</field>
+      <field name="code">BAMS</field>
+      <field name="parent_id" ref="sprintit_balance_bas"/>
+      <field name="display_name">Muut saamiset</field>
+      <field name="domain" eval="[('account_id.tag_ids', 'in', [ref('l10n_fi.account_tag_other_receivables_investments')])]"/>
+      <field name="sequence">5</field>
+      <field name="green_on_positive">True</field>
+    </record>
+    <record id="sprintit_balance_maao" model="account.financial.html.report.line">
+      <field name="formulas">balance = sum.balance</field>
+      <field name="groupby">account_id</field>
+      <field name="name">Omistetut</field>
+      <field name="special_date_changer">normal</field>
+      <field name="print_on_new_page">False</field>
+      <field name="show_domain">foldable</field>
+      <field name="hide_if_zero">False</field>
+      <field name="figure_type">float</field>
+      <field name="level">4</field>
+      <field name="code">MAAO</field>
+      <field name="parent_id" ref="sprintit_balance_bama"/>
+      <field name="display_name">Omistetut</field>
+      <field name="domain" eval="[('account_id.tag_ids', 'in', [ref('l10n_fi.account_tag_land_and_water_areas_owned')])]"/>
+      <field name="sequence">0</field>
+      <field name="green_on_positive">True</field>
+    </record>
+    <record id="sprintit_balance_bpvlp" model="account.financial.html.report.line">
+      <field name="formulas">balance = -sum.balance</field>
+      <field name="groupby">account_id</field>
+      <field name="name">Pääomalainat</field>
+      <field name="special_date_changer">normal</field>
+      <field name="print_on_new_page">False</field>
+      <field name="show_domain">foldable</field>
+      <field name="hide_if_zero">False</field>
+      <field name="figure_type">float</field>
+      <field name="level">4</field>
+      <field name="code">BPVLP</field>
+      <field name="parent_id" ref="sprintit_balance_bpvl"/>
+      <field name="display_name">Pääomalainat</field>
+      <field name="domain" eval="[('account_id.tag_ids', 'in', [ref('l10n_fi.account_tag_capital_loans_are_short-term')])]"/>
+      <field name="sequence">0</field>
+      <field name="green_on_positive">True</field>
+    </record>
+    <record id="sprintit_balance_maav" model="account.financial.html.report.line">
+      <field name="formulas">balance = sum.balance</field>
+      <field name="groupby">account_id</field>
+      <field name="name">Vuokraoikeudet</field>
+      <field name="special_date_changer">normal</field>
+      <field name="print_on_new_page">False</field>
+      <field name="show_domain">foldable</field>
+      <field name="hide_if_zero">False</field>
+      <field name="figure_type">float</field>
+      <field name="level">4</field>
+      <field name="code">MAAV</field>
+      <field name="parent_id" ref="sprintit_balance_bama"/>
+      <field name="display_name">Vuokraoikeudet</field>
+      <field name="domain" eval="[('account_id.tag_ids', 'in', [ref('l10n_fi.account_tag_land_and_water_rights_lease')])]"/>
+      <field name="sequence">0</field>
+      <field name="green_on_positive">True</field>
+    </record>
+    <record id="sprintit_balance_brro" model="account.financial.html.report.line">
+      <field name="formulas">balance = sum.balance</field>
+      <field name="groupby">account_id</field>
+      <field name="name">Omistetut</field>
+      <field name="special_date_changer">normal</field>
+      <field name="print_on_new_page">False</field>
+      <field name="show_domain">foldable</field>
+      <field name="hide_if_zero">False</field>
+      <field name="figure_type">float</field>
+      <field name="level">4</field>
+      <field name="code">BRRO</field>
+      <field name="parent_id" ref="sprintit_balance_barr"/>
+      <field name="display_name">Omistetut</field>
+      <field name="domain" eval="[('account_id.tag_ids', 'in', [ref('l10n_fi.account_tag_buildings_owned')])]"/>
+      <field name="sequence">0</field>
+      <field name="green_on_positive">True</field>
+    </record>
+    <record id="sprintit_balance_baspm" model="account.financial.html.report.line">
+      <field name="formulas">balance = sum.balance</field>
+      <field name="groupby">account_id</field>
+      <field name="name">Myyntisaamiset</field>
+      <field name="special_date_changer">normal</field>
+      <field name="print_on_new_page">False</field>
+      <field name="show_domain">foldable</field>
+      <field name="hide_if_zero">False</field>
+      <field name="figure_type">float</field>
+      <field name="level">4</field>
+      <field name="code">BASPM</field>
+      <field name="parent_id" ref="sprintit_balance_basp"/>
+      <field name="display_name">Myyntisaamiset</field>
+      <field name="domain" eval="[('account_id.tag_ids', 'in', [ref('l10n_fi.account_tag_trade_receivables_long-term')])]"/>
+      <field name="sequence">0</field>
+      <field name="green_on_positive">True</field>
+    </record>
+    <record id="sprintit_balance_baslm" model="account.financial.html.report.line">
+      <field name="formulas">balance = sum.balance</field>
+      <field name="groupby">account_id</field>
+      <field name="name">Myyntisaamiset</field>
+      <field name="special_date_changer">normal</field>
+      <field name="print_on_new_page">False</field>
+      <field name="show_domain">foldable</field>
+      <field name="hide_if_zero">False</field>
+      <field name="figure_type">float</field>
+      <field name="level">4</field>
+      <field name="code">BASLM</field>
+      <field name="parent_id" ref="sprintit_balance_basl"/>
+      <field name="display_name">Myyntisaamiset</field>
+      <field name="domain" eval="[('account_id.tag_ids', 'in', [ref('l10n_fi.account_tag_accounts_receivable')])]"/>
+      <field name="sequence">0</field>
+      <field name="green_on_positive">True</field>
+    </record>
+    <record id="sprintit_balance_brrv" model="account.financial.html.report.line">
+      <field name="formulas">balance = sum.balance</field>
+      <field name="groupby">account_id</field>
+      <field name="name">Vuokraoikeudet</field>
+      <field name="special_date_changer">normal</field>
+      <field name="print_on_new_page">False</field>
+      <field name="show_domain">foldable</field>
+      <field name="hide_if_zero">False</field>
+      <field name="figure_type">float</field>
+      <field name="level">4</field>
+      <field name="code">BRRV</field>
+      <field name="parent_id" ref="sprintit_balance_barr"/>
+      <field name="display_name">Vuokraoikeudet</field>
+      <field name="domain" eval="[('account_id.tag_ids', 'in', [ref('l10n_fi.account_tag_building_leases')])]"/>
+      <field name="sequence">0</field>
+      <field name="green_on_positive">True</field>
+    </record>
+    <record id="sprintit_balance_svop" model="account.financial.html.report.line">
+      <field name="formulas">balance = -sum.balance</field>
+      <field name="groupby">account_id</field>
+      <field name="name">Sijoitetun vapaan oman pääoman rahasto</field>
+      <field name="special_date_changer">normal</field>
+      <field name="print_on_new_page">False</field>
+      <field name="show_domain">foldable</field>
+      <field name="hide_if_zero">False</field>
+      <field name="figure_type">float</field>
+      <field name="level">4</field>
+      <field name="code">SVOP</field>
+      <field name="parent_id" ref="sprintit_balance_bpom"/>
+      <field name="display_name">Sijoitetun vapaan oman pääoman rahasto</field>
+      <field name="domain" eval="[('account_id.tag_ids', 'in', [ref('l10n_fi.account_tag_the_invested_unrestricted_equity_fund')])]"/>
+      <field name="sequence">0</field>
+      <field name="green_on_positive">True</field>
+    </record>
+    <record id="sprintit_balance_bpvpp" model="account.financial.html.report.line">
+      <field name="formulas">balance = -sum.balance</field>
+      <field name="groupby">account_id</field>
+      <field name="name">Pääomalainat</field>
+      <field name="special_date_changer">normal</field>
+      <field name="print_on_new_page">False</field>
+      <field name="show_domain">foldable</field>
+      <field name="hide_if_zero">False</field>
+      <field name="figure_type">float</field>
+      <field name="level">4</field>
+      <field name="code">BPVPP</field>
+      <field name="parent_id" ref="sprintit_balance_bpvp"/>
+      <field name="display_name">Pääomalainat</field>
+      <field name="domain" eval="[('account_id.tag_ids', 'in', [ref('l10n_fi.account_tag_subordinated_loans_long-term')])]"/>
+      <field name="sequence">0</field>
+      <field name="green_on_positive">True</field>
+    </record>
+    <record id="sprintit_balance_baspk" model="account.financial.html.report.line">
+      <field name="formulas">balance = sum.balance</field>
+      <field name="groupby">account_id</field>
+      <field name="name">Saamiset saman konsernin yrityksiltä</field>
+      <field name="special_date_changer">normal</field>
+      <field name="print_on_new_page">False</field>
+      <field name="show_domain">foldable</field>
+      <field name="hide_if_zero">False</field>
+      <field name="figure_type">float</field>
+      <field name="level">4</field>
+      <field name="code">BASPK</field>
+      <field name="parent_id" ref="sprintit_balance_basp"/>
+      <field name="display_name">Saamiset saman konsernin yrityksiltä</field>
+      <field name="domain" eval="[('account_id.tag_ids', 'in', [ref('l10n_fi.account_tag_receivables_from_group_long-term')])]"/>
+      <field name="sequence">1</field>
+      <field name="green_on_positive">True</field>
+    </record>
+    <record id="sprintit_balance_baslk" model="account.financial.html.report.line">
+      <field name="formulas">balance = sum.balance</field>
+      <field name="groupby">account_id</field>
+      <field name="name">Saamiset saman konsernin yrityksiltä</field>
+      <field name="special_date_changer">normal</field>
+      <field name="print_on_new_page">False</field>
+      <field name="show_domain">foldable</field>
+      <field name="hide_if_zero">False</field>
+      <field name="figure_type">float</field>
+      <field name="level">4</field>
+      <field name="code">BASLK</field>
+      <field name="parent_id" ref="sprintit_balance_basl"/>
+      <field name="display_name">Saamiset saman konsernin yrityksiltä</field>
+      <field name="domain" eval="[('account_id.tag_ids', 'in', [ref('l10n_fi.account_tag_trade_group'),ref('l10n_fi.account_tag_receivables_from_group')])]"/>
+      <field name="sequence">1</field>
+      <field name="green_on_positive">True</field>
+    </record>
+    <record id="sprintit_balance_vara" model="account.financial.html.report.line">
+      <field name="formulas">balance = -sum.balance</field>
+      <field name="groupby">account_id</field>
+      <field name="name">Vararahasto</field>
+      <field name="special_date_changer">normal</field>
+      <field name="print_on_new_page">False</field>
+      <field name="show_domain">foldable</field>
+      <field name="hide_if_zero">False</field>
+      <field name="figure_type">float</field>
+      <field name="level">4</field>
+      <field name="code">VARA</field>
+      <field name="parent_id" ref="sprintit_balance_bpom"/>
+      <field name="display_name">Vararahasto</field>
+      <field name="domain" eval="[('account_id.tag_ids', 'in', [ref('l10n_fi.account_tag_reserve')])]"/>
+      <field name="sequence">1</field>
+      <field name="green_on_positive">True</field>
+    </record>
+    <record id="sprintit_balance_bpvpj" model="account.financial.html.report.line">
+      <field name="formulas">balance = -sum.balance</field>
+      <field name="groupby">account_id</field>
+      <field name="name">Joukkovelkakirjalainat</field>
+      <field name="special_date_changer">normal</field>
+      <field name="print_on_new_page">False</field>
+      <field name="show_domain">foldable</field>
+      <field name="hide_if_zero">False</field>
+      <field name="figure_type">float</field>
+      <field name="level">4</field>
+      <field name="code">BPVPJ</field>
+      <field name="parent_id" ref="sprintit_balance_bpvp"/>
+      <field name="display_name">Joukkovelkakirjalainat</field>
+      <field name="domain" eval="[('account_id.tag_ids', 'in', [ref('l10n_fi.account_tag_bonds_are_long-term')])]"/>
+      <field name="sequence">1</field>
+      <field name="green_on_positive">True</field>
+    </record>
+    <record id="sprintit_balance_bpvlj" model="account.financial.html.report.line">
+      <field name="formulas">balance = -sum.balance</field>
+      <field name="groupby">account_id</field>
+      <field name="name">Joukkovelkakirjalainat</field>
+      <field name="special_date_changer">normal</field>
+      <field name="print_on_new_page">False</field>
+      <field name="show_domain">foldable</field>
+      <field name="hide_if_zero">False</field>
+      <field name="figure_type">float</field>
+      <field name="level">4</field>
+      <field name="code">BPVLJ</field>
+      <field name="parent_id" ref="sprintit_balance_bpvl"/>
+      <field name="display_name">Joukkovelkakirjalainat</field>
+      <field name="domain" eval="[('account_id.tag_ids', 'in', [ref('l10n_fi.account_tag_bonds_short-term')])]"/>
+      <field name="sequence">1</field>
+      <field name="green_on_positive">True</field>
+    </record>
+    <record id="sprintit_balance_basly" model="account.financial.html.report.line">
+      <field name="formulas">balance = sum.balance</field>
+      <field name="groupby">account_id</field>
+      <field name="name">Saamiset omistusyhteysyrityksiltä</field>
+      <field name="special_date_changer">normal</field>
+      <field name="print_on_new_page">False</field>
+      <field name="show_domain">foldable</field>
+      <field name="hide_if_zero">False</field>
+      <field name="figure_type">float</field>
+      <field name="level">4</field>
+      <field name="code">BASLY</field>
+      <field name="parent_id" ref="sprintit_balance_basl"/>
+      <field name="display_name">Saamiset omistusyhteysyrityksiltä</field>
+      <field name="domain" eval="[('account_id.tag_ids', 'in', [ref('l10n_fi.account_tag_accounts_receivable_from_associated_companies'),ref('l10n_fi.account_tag_receivables_from_associated_companies')])]"/>
+      <field name="sequence">2</field>
+      <field name="green_on_positive">True</field>
+    </record>
+    <record id="sprintit_balance_baspy" model="account.financial.html.report.line">
+      <field name="formulas">balance = sum.balance</field>
+      <field name="groupby">account_id</field>
+      <field name="name">Saamiset omistusyhteysyrityksiltä</field>
+      <field name="special_date_changer">normal</field>
+      <field name="print_on_new_page">False</field>
+      <field name="show_domain">foldable</field>
+      <field name="hide_if_zero">False</field>
+      <field name="figure_type">float</field>
+      <field name="level">4</field>
+      <field name="code">BASPY</field>
+      <field name="parent_id" ref="sprintit_balance_basp"/>
+      <field name="display_name">Saamiset omistusyhteysyrityksiltä</field>
+      <field name="domain" eval="[('account_id.tag_ids', 'in', [ref('l10n_fi.account_tag_receivables_from_associated_companies_non-current')])]"/>
+      <field name="sequence">2</field>
+      <field name="green_on_positive">True</field>
+    </record>
+    <record id="sprintit_balance_jarj" model="account.financial.html.report.line">
+      <field name="formulas">balance = -sum.balance</field>
+      <field name="groupby">account_id</field>
+      <field name="name">Yhtiöjärjestyksen tai sääntöjen mukaiset rahastot</field>
+      <field name="special_date_changer">normal</field>
+      <field name="print_on_new_page">False</field>
+      <field name="show_domain">foldable</field>
+      <field name="hide_if_zero">False</field>
+      <field name="figure_type">float</field>
+      <field name="level">4</field>
+      <field name="code">JARJ</field>
+      <field name="parent_id" ref="sprintit_balance_bpom"/>
+      <field name="display_name">Yhtiöjärjestyksen tai sääntöjen mukaiset rahastot</field>
+      <field name="domain" eval="[('account_id.tag_ids', 'in', [ref('l10n_fi.account_tag_the_articles_of_association_or_fund_under_the_rules')])]"/>
+      <field name="sequence">2</field>
+      <field name="green_on_positive">True</field>
+    </record>
+    <record id="sprintit_balance_bpvpv" model="account.financial.html.report.line">
+      <field name="formulas">balance = -sum.balance</field>
+      <field name="groupby">account_id</field>
+      <field name="name">Vaihtovelkakirjalainat</field>
+      <field name="special_date_changer">normal</field>
+      <field name="print_on_new_page">False</field>
+      <field name="show_domain">foldable</field>
+      <field name="hide_if_zero">False</field>
+      <field name="figure_type">float</field>
+      <field name="level">4</field>
+      <field name="code">BPVPV</field>
+      <field name="parent_id" ref="sprintit_balance_bpvp"/>
+      <field name="display_name">Vaihtovelkakirjalainat</field>
+      <field name="domain" eval="[('account_id.tag_ids', 'in', [ref('l10n_fi.account_tag_convertible_bonds_long-term')])]"/>
+      <field name="sequence">2</field>
+      <field name="green_on_positive">True</field>
+    </record>
+    <record id="sprintit_balance_bpvlv" model="account.financial.html.report.line">
+      <field name="formulas">balance = -sum.balance</field>
+      <field name="groupby">account_id</field>
+      <field name="name">Vaihtovelkakirjalainat</field>
+      <field name="special_date_changer">normal</field>
+      <field name="print_on_new_page">False</field>
+      <field name="show_domain">foldable</field>
+      <field name="hide_if_zero">False</field>
+      <field name="figure_type">float</field>
+      <field name="level">4</field>
+      <field name="code">BPVLV</field>
+      <field name="parent_id" ref="sprintit_balance_bpvl"/>
+      <field name="display_name">Vaihtovelkakirjalainat</field>
+      <field name="domain" eval="[('account_id.tag_ids', 'in', [ref('l10n_fi.account_tag_convertible_bonds_short-term')])]"/>
+      <field name="sequence">2</field>
+      <field name="green_on_positive">True</field>
+    </record>
+    <record id="sprintit_balance_basll" model="account.financial.html.report.line">
+      <field name="formulas">balance = sum.balance</field>
+      <field name="groupby">account_id</field>
+      <field name="name">Lainasaamiset</field>
+      <field name="special_date_changer">normal</field>
+      <field name="print_on_new_page">False</field>
+      <field name="show_domain">foldable</field>
+      <field name="hide_if_zero">False</field>
+      <field name="figure_type">float</field>
+      <field name="level">4</field>
+      <field name="code">BASLL</field>
+      <field name="parent_id" ref="sprintit_balance_basl"/>
+      <field name="display_name">Lainasaamiset</field>
+      <field name="domain" eval="[('account_id.tag_ids', 'in', [ref('l10n_fi.account_tag_loans')])]"/>
+      <field name="sequence">3</field>
+      <field name="green_on_positive">True</field>
+    </record>
+    <record id="sprintit_balance_" model="account.financial.html.report.line">
+      <field name="special_date_changer">normal</field>
+      <field name="print_on_new_page">False</field>
+      <field name="show_domain">foldable</field>
+      <field name="hide_if_zero">False</field>
+      <field name="figure_type">float</field>
+      <field name="level">4</field>
+      <field name="financial_report_id" ref="sprintit_balance_report"/>
+      <field name="display_name">False</field>
+      <field name="sequence">3</field>
+      <field name="green_on_positive">True</field>
+    </record>
+    <record id="sprintit_balance_bpvll" model="account.financial.html.report.line">
+      <field name="formulas">balance = -sum.balance</field>
+      <field name="groupby">account_id</field>
+      <field name="name">Lainat rahoituslaitoksilta</field>
+      <field name="special_date_changer">normal</field>
+      <field name="print_on_new_page">False</field>
+      <field name="show_domain">foldable</field>
+      <field name="hide_if_zero">False</field>
+      <field name="figure_type">float</field>
+      <field name="level">4</field>
+      <field name="code">BPVLL</field>
+      <field name="parent_id" ref="sprintit_balance_bpvl"/>
+      <field name="display_name">Lainat rahoituslaitoksilta</field>
+      <field name="domain" eval="[('account_id.tag_ids', 'in', [ref('l10n_fi.account_tag_loans_from_financial_institutions_short-term')])]"/>
+      <field name="sequence">3</field>
+      <field name="green_on_positive">True</field>
+    </record>
+    <record id="sprintit_balance_bspl" model="account.financial.html.report.line">
+      <field name="formulas">balance = sum.balance</field>
+      <field name="groupby">account_id</field>
+      <field name="name">Lainasaamiset</field>
+      <field name="special_date_changer">normal</field>
+      <field name="print_on_new_page">False</field>
+      <field name="show_domain">foldable</field>
+      <field name="hide_if_zero">False</field>
+      <field name="figure_type">float</field>
+      <field name="level">4</field>
+      <field name="code">BSPL</field>
+      <field name="parent_id" ref="sprintit_balance_basp"/>
+      <field name="display_name">Lainasaamiset</field>
+      <field name="domain" eval="[('account_id.tag_ids', 'in', [ref('l10n_fi.account_tag_loan_receivables_long-term')])]"/>
+      <field name="sequence">3</field>
+      <field name="green_on_positive">True</field>
+    </record>
+    <record id="sprintit_balance_kayv" model="account.financial.html.report.line">
+      <field name="formulas">balance = -sum.balance</field>
+      <field name="groupby">account_id</field>
+      <field name="name">Käyvän arvon rahasto</field>
+      <field name="special_date_changer">normal</field>
+      <field name="print_on_new_page">False</field>
+      <field name="show_domain">foldable</field>
+      <field name="hide_if_zero">False</field>
+      <field name="figure_type">float</field>
+      <field name="level">4</field>
+      <field name="code">KAYV</field>
+      <field name="parent_id" ref="sprintit_balance_bpom"/>
+      <field name="display_name">Käyvän arvon rahasto</field>
+      <field name="domain" eval="[('account_id.tag_ids', 'in', [ref('l10n_fi.account_tag_the_fair_value_reserve')])]"/>
+      <field name="sequence">3</field>
+      <field name="green_on_positive">True</field>
+    </record>
+    <record id="sprintit_balance_bpvpl" model="account.financial.html.report.line">
+      <field name="formulas">balance = -sum.balance</field>
+      <field name="groupby">account_id</field>
+      <field name="name">Lainat rahoituslaitoksilta</field>
+      <field name="special_date_changer">normal</field>
+      <field name="print_on_new_page">False</field>
+      <field name="show_domain">foldable</field>
+      <field name="hide_if_zero">False</field>
+      <field name="figure_type">float</field>
+      <field name="level">4</field>
+      <field name="code">BPVPL</field>
+      <field name="parent_id" ref="sprintit_balance_bpvp"/>
+      <field name="display_name">Lainat rahoituslaitoksilta</field>
+      <field name="domain" eval="[('account_id.tag_ids', 'in', [ref('l10n_fi.account_tag_loans_from_financial_institutions_long-term')])]"/>
+      <field name="sequence">3</field>
+      <field name="green_on_positive">True</field>
+    </record>
+    <record id="sprintit_balance_basld" model="account.financial.html.report.line">
+      <field name="formulas">balance = sum.balance</field>
+      <field name="groupby">account_id</field>
+      <field name="name">Laskennalliset verosaamiset</field>
+      <field name="special_date_changer">normal</field>
+      <field name="print_on_new_page">False</field>
+      <field name="show_domain">foldable</field>
+      <field name="hide_if_zero">False</field>
+      <field name="figure_type">float</field>
+      <field name="level">4</field>
+      <field name="code">BASLD</field>
+      <field name="parent_id" ref="sprintit_balance_basl"/>
+      <field name="display_name">Laskennalliset verosaamiset</field>
+      <field name="domain" eval="[('account_id.tag_ids', 'in', [ref('l10n_fi.account_tag_deferred_tax_assets')])]"/>
+      <field name="sequence">4</field>
+      <field name="green_on_positive">True</field>
+    </record>
+    <record id="sprintit_balance_mrah" model="account.financial.html.report.line">
+      <field name="formulas">balance = -sum.balance</field>
+      <field name="groupby">account_id</field>
+      <field name="name">Muut rahastot</field>
+      <field name="special_date_changer">normal</field>
+      <field name="print_on_new_page">False</field>
+      <field name="show_domain">foldable</field>
+      <field name="hide_if_zero">False</field>
+      <field name="figure_type">float</field>
+      <field name="level">4</field>
+      <field name="code">MRAH</field>
+      <field name="parent_id" ref="sprintit_balance_bpom"/>
+      <field name="display_name">Muut rahastot</field>
+      <field name="domain" eval="[('account_id.tag_ids', 'in', [ref('l10n_fi.account_tag_other_reserves')])]"/>
+      <field name="sequence">4</field>
+      <field name="green_on_positive">True</field>
+    </record>
+    <record id="sprintit_balance_bpvlt" model="account.financial.html.report.line">
+      <field name="formulas">balance = -sum.balance</field>
+      <field name="groupby">account_id</field>
+      <field name="name">Takaisinlainat työeläkevakuutuslaitoksilta</field>
+      <field name="special_date_changer">normal</field>
+      <field name="print_on_new_page">False</field>
+      <field name="show_domain">foldable</field>
+      <field name="hide_if_zero">False</field>
+      <field name="figure_type">float</field>
+      <field name="level">4</field>
+      <field name="code">BPVLT</field>
+      <field name="parent_id" ref="sprintit_balance_bpvl"/>
+      <field name="display_name">Takaisinlainat työeläkevakuutuslaitoksilta</field>
+      <field name="domain" eval="[('account_id.tag_ids', 'in', [ref('l10n_fi.account_tag_pension_loans_short-term')])]"/>
+      <field name="sequence">4</field>
+      <field name="green_on_positive">True</field>
+    </record>
+    <record id="sprintit_balance_baspd" model="account.financial.html.report.line">
+      <field name="formulas">balance = sum.balance</field>
+      <field name="groupby">account_id</field>
+      <field name="name">Laskennalliset verosaamiset</field>
+      <field name="special_date_changer">normal</field>
+      <field name="print_on_new_page">False</field>
+      <field name="show_domain">foldable</field>
+      <field name="hide_if_zero">False</field>
+      <field name="figure_type">float</field>
+      <field name="level">4</field>
+      <field name="code">BASPD</field>
+      <field name="parent_id" ref="sprintit_balance_basp"/>
+      <field name="display_name">Laskennalliset verosaamiset</field>
+      <field name="domain" eval="[('account_id.tag_ids', 'in', [ref('l10n_fi.account_tag_deferred_tax_assets_are_long-term')])]"/>
+      <field name="sequence">4</field>
+      <field name="green_on_positive">True</field>
+    </record>
+    <record id="sprintit_balance_bpvpt" model="account.financial.html.report.line">
+      <field name="formulas">balance = -sum.balance</field>
+      <field name="groupby">account_id</field>
+      <field name="name">Takaisinlainat työeläkevakuutuslaitoksilta</field>
+      <field name="special_date_changer">normal</field>
+      <field name="print_on_new_page">False</field>
+      <field name="show_domain">foldable</field>
+      <field name="hide_if_zero">False</field>
+      <field name="figure_type">float</field>
+      <field name="level">4</field>
+      <field name="code">BPVPT</field>
+      <field name="parent_id" ref="sprintit_balance_bpvp"/>
+      <field name="display_name">Takaisinlainat työeläkevakuutuslaitoksilta</field>
+      <field name="domain" eval="[('account_id.tag_ids', 'in', [ref('l10n_fi.account_tag_pension_loans_long-term')])]"/>
+      <field name="sequence">4</field>
+      <field name="green_on_positive">True</field>
+    </record>
+    <record id="sprintit_balance_baslu" model="account.financial.html.report.line">
+      <field name="formulas">balance = sum.balance</field>
+      <field name="groupby">account_id</field>
+      <field name="name">Muut saamiset</field>
+      <field name="special_date_changer">normal</field>
+      <field name="print_on_new_page">False</field>
+      <field name="show_domain">foldable</field>
+      <field name="hide_if_zero">False</field>
+      <field name="figure_type">float</field>
+      <field name="level">4</field>
+      <field name="code">BASLU</field>
+      <field name="parent_id" ref="sprintit_balance_basl"/>
+      <field name="display_name">Muut saamiset</field>
+      <field name="domain" eval="[('account_id.tag_ids', 'in', [ref('l10n_fi.account_tag_other_receivables')])]"/>
+      <field name="sequence">5</field>
+      <field name="green_on_positive">True</field>
+    </record>
+    <record id="sprintit_balance_bpvle" model="account.financial.html.report.line">
+      <field name="formulas">balance = -sum.balance</field>
+      <field name="groupby">account_id</field>
+      <field name="name">Saadut ennakot</field>
+      <field name="special_date_changer">normal</field>
+      <field name="print_on_new_page">False</field>
+      <field name="show_domain">foldable</field>
+      <field name="hide_if_zero">False</field>
+      <field name="figure_type">float</field>
+      <field name="level">4</field>
+      <field name="code">BPVLE</field>
+      <field name="parent_id" ref="sprintit_balance_bpvl"/>
+      <field name="display_name">Saadut ennakot</field>
+      <field name="domain" eval="[('account_id.tag_ids', 'in', [ref('l10n_fi.account_tag_advances_received_short-term')])]"/>
+      <field name="sequence">5</field>
+      <field name="green_on_positive">True</field>
+    </record>
+    <record id="sprintit_balance_bpvpe" model="account.financial.html.report.line">
+      <field name="formulas">balance = -sum.balance</field>
+      <field name="groupby">account_id</field>
+      <field name="name">Saadut ennakot</field>
+      <field name="special_date_changer">normal</field>
+      <field name="print_on_new_page">False</field>
+      <field name="show_domain">foldable</field>
+      <field name="hide_if_zero">False</field>
+      <field name="figure_type">float</field>
+      <field name="level">4</field>
+      <field name="code">BPVPE</field>
+      <field name="parent_id" ref="sprintit_balance_bpvp"/>
+      <field name="display_name">Saadut ennakot</field>
+      <field name="domain" eval="[('account_id.tag_ids', 'in', [ref('l10n_fi.account_tag_advances_received_long-term')])]"/>
+      <field name="sequence">5</field>
+      <field name="green_on_positive">True</field>
+    </record>
+    <record id="sprintit_balance_baspu" model="account.financial.html.report.line">
+      <field name="formulas">balance = sum.balance</field>
+      <field name="groupby">account_id</field>
+      <field name="name">Muut saamiset</field>
+      <field name="special_date_changer">normal</field>
+      <field name="print_on_new_page">False</field>
+      <field name="show_domain">foldable</field>
+      <field name="hide_if_zero">False</field>
+      <field name="figure_type">float</field>
+      <field name="level">4</field>
+      <field name="code">BASPU</field>
+      <field name="parent_id" ref="sprintit_balance_basp"/>
+      <field name="display_name">Muut saamiset</field>
+      <field name="domain" eval="[('account_id.tag_ids', 'in', [ref('l10n_fi.account_tag_other_long-term_receivables')])]"/>
+      <field name="sequence">5</field>
+      <field name="green_on_positive">True</field>
+    </record>
+    <record id="sprintit_balance_bpvlo" model="account.financial.html.report.line">
+      <field name="formulas">balance = -sum.balance</field>
+      <field name="groupby">account_id</field>
+      <field name="name">Ostovelat</field>
+      <field name="special_date_changer">normal</field>
+      <field name="print_on_new_page">False</field>
+      <field name="show_domain">foldable</field>
+      <field name="hide_if_zero">False</field>
+      <field name="figure_type">float</field>
+      <field name="level">4</field>
+      <field name="code">BPVLO</field>
+      <field name="parent_id" ref="sprintit_balance_bpvl"/>
+      <field name="display_name">Ostovelat</field>
+      <field name="domain" eval="[('account_id.tag_ids', 'in', [ref('l10n_fi.account_tag_accounts_payable')])]"/>
+      <field name="sequence">6</field>
+      <field name="green_on_positive">True</field>
+    </record>
+    <record id="sprintit_balance_bpvpo" model="account.financial.html.report.line">
+      <field name="formulas">balance = -sum.balance</field>
+      <field name="groupby">account_id</field>
+      <field name="name">Ostovelat</field>
+      <field name="special_date_changer">normal</field>
+      <field name="print_on_new_page">False</field>
+      <field name="show_domain">foldable</field>
+      <field name="hide_if_zero">False</field>
+      <field name="figure_type">float</field>
+      <field name="level">4</field>
+      <field name="code">BPVPO</field>
+      <field name="parent_id" ref="sprintit_balance_bpvp"/>
+      <field name="display_name">Ostovelat</field>
+      <field name="domain" eval="[('account_id.tag_ids', 'in', [ref('l10n_fi.account_tag_accounts_payable-current')])]"/>
+      <field name="sequence">6</field>
+      <field name="green_on_positive">True</field>
+    </record>
+    <record id="sprintit_balance_basmo" model="account.financial.html.report.line">
+      <field name="formulas">balance = sum.balance</field>
+      <field name="groupby">account_id</field>
+      <field name="name">Maksamattomat osakkeet/osuudet</field>
+      <field name="special_date_changer">normal</field>
+      <field name="print_on_new_page">False</field>
+      <field name="show_domain">foldable</field>
+      <field name="hide_if_zero">False</field>
+      <field name="figure_type">float</field>
+      <field name="level">4</field>
+      <field name="code">BASMO</field>
+      <field name="parent_id" ref="sprintit_balance_basp"/>
+      <field name="display_name">Maksamattomat osakkeet/osuudet</field>
+      <field name="domain" eval="[('account_id.tag_ids', 'in', [ref('l10n_fi.account_tag_unpaid_shares_of_long-term')])]"/>
+      <field name="sequence">6</field>
+      <field name="green_on_positive">True</field>
+    </record>
+    <record id="sprintit_balance_bslmo" model="account.financial.html.report.line">
+      <field name="formulas">balance = sum.balance</field>
+      <field name="groupby">account_id</field>
+      <field name="name">Maksamattomat osakkeet/osuudet</field>
+      <field name="special_date_changer">normal</field>
+      <field name="print_on_new_page">False</field>
+      <field name="show_domain">foldable</field>
+      <field name="hide_if_zero">False</field>
+      <field name="figure_type">float</field>
+      <field name="level">4</field>
+      <field name="code">BSLMO</field>
+      <field name="parent_id" ref="sprintit_balance_basl"/>
+      <field name="display_name">Maksamattomat osakkeet/osuudet</field>
+      <field name="domain" eval="[('account_id.tag_ids', 'in', [ref('l10n_fi.account_tag_unpaid_contributions')])]"/>
+      <field name="sequence">6</field>
+      <field name="green_on_positive">True</field>
+    </record>
+    <record id="sprintit_balance_bpvlx" model="account.financial.html.report.line">
+      <field name="formulas">balance = -sum.balance</field>
+      <field name="groupby">account_id</field>
+      <field name="name">Rahoitusvekselit</field>
+      <field name="special_date_changer">normal</field>
+      <field name="print_on_new_page">False</field>
+      <field name="show_domain">foldable</field>
+      <field name="hide_if_zero">False</field>
+      <field name="figure_type">float</field>
+      <field name="level">4</field>
+      <field name="code">BPVLX</field>
+      <field name="parent_id" ref="sprintit_balance_bpvl"/>
+      <field name="display_name">Rahoitusvekselit</field>
+      <field name="domain" eval="[('account_id.tag_ids', 'in', [ref('l10n_fi.account_tag_bills_of_short-term')])]"/>
+      <field name="sequence">7</field>
+      <field name="green_on_positive">True</field>
+    </record>
+    <record id="sprintit_balance_basls" model="account.financial.html.report.line">
+      <field name="formulas">balance = sum.balance</field>
+      <field name="groupby">account_id</field>
+      <field name="name">Siirtosaamiset</field>
+      <field name="special_date_changer">normal</field>
+      <field name="print_on_new_page">False</field>
+      <field name="show_domain">foldable</field>
+      <field name="hide_if_zero">False</field>
+      <field name="figure_type">float</field>
+      <field name="level">4</field>
+      <field name="code">BASLS</field>
+      <field name="parent_id" ref="sprintit_balance_basl"/>
+      <field name="display_name">Siirtosaamiset</field>
+      <field name="domain" eval="[('account_id.tag_ids', 'in', [ref('l10n_fi.account_tag_prepayments_and_accrued_income')])]"/>
+      <field name="sequence">7</field>
+      <field name="green_on_positive">True</field>
+    </record>
+    <record id="sprintit_balance_bsps" model="account.financial.html.report.line">
+      <field name="formulas">balance = sum.balance</field>
+      <field name="groupby">account_id</field>
+      <field name="name">Siirtosaamiset</field>
+      <field name="special_date_changer">normal</field>
+      <field name="print_on_new_page">False</field>
+      <field name="show_domain">foldable</field>
+      <field name="hide_if_zero">False</field>
+      <field name="figure_type">float</field>
+      <field name="level">4</field>
+      <field name="code">BSPS</field>
+      <field name="parent_id" ref="sprintit_balance_basp"/>
+      <field name="display_name">Siirtosaamiset</field>
+      <field name="domain" eval="[('account_id.tag_ids', 'in', [ref('l10n_fi.account_tag_prepaid_expenses_and_long-term')])]"/>
+      <field name="sequence">7</field>
+      <field name="green_on_positive">True</field>
+    </record>
+    <record id="sprintit_balance_bpvpx" model="account.financial.html.report.line">
+      <field name="formulas">balance = -sum.balance</field>
+      <field name="groupby">account_id</field>
+      <field name="name">Rahoitusvekselit</field>
+      <field name="special_date_changer">normal</field>
+      <field name="print_on_new_page">False</field>
+      <field name="show_domain">foldable</field>
+      <field name="hide_if_zero">False</field>
+      <field name="figure_type">float</field>
+      <field name="level">4</field>
+      <field name="code">BPVPX</field>
+      <field name="parent_id" ref="sprintit_balance_bpvp"/>
+      <field name="display_name">Rahoitusvekselit</field>
+      <field name="domain" eval="[('account_id.tag_ids', 'in', [ref('l10n_fi.account_tag_bills_of_long-term')])]"/>
+      <field name="sequence">7</field>
+      <field name="green_on_positive">True</field>
+    </record>
+    <record id="sprintit_balance_bpvpk" model="account.financial.html.report.line">
+      <field name="formulas">balance = -sum.balance</field>
+      <field name="groupby">account_id</field>
+      <field name="name">Velat saman konsernin yrityksille</field>
+      <field name="special_date_changer">normal</field>
+      <field name="print_on_new_page">False</field>
+      <field name="show_domain">foldable</field>
+      <field name="hide_if_zero">False</field>
+      <field name="figure_type">float</field>
+      <field name="level">4</field>
+      <field name="code">BPVPK</field>
+      <field name="parent_id" ref="sprintit_balance_bpvp"/>
+      <field name="display_name">Velat saman konsernin yrityksille</field>
+      <field name="domain" eval="[('account_id.tag_ids', 'in', [ref('l10n_fi.account_tag_consolidated_long-term_liabilities')])]"/>
+      <field name="sequence">8</field>
+      <field name="green_on_positive">True</field>
+    </record>
+    <record id="sprintit_balance_bpvlk" model="account.financial.html.report.line">
+      <field name="formulas">balance = -sum.balance</field>
+      <field name="groupby">account_id</field>
+      <field name="name">Velat saman konsernin yrityksille</field>
+      <field name="special_date_changer">normal</field>
+      <field name="print_on_new_page">False</field>
+      <field name="show_domain">foldable</field>
+      <field name="hide_if_zero">False</field>
+      <field name="figure_type">float</field>
+      <field name="level">4</field>
+      <field name="code">BPVLK</field>
+      <field name="parent_id" ref="sprintit_balance_bpvl"/>
+      <field name="display_name">Velat saman konsernin yrityksille</field>
+      <field name="domain" eval="[('account_id.tag_ids', 'in', [ref('l10n_fi.account_tag_trade_payables_to_group'),ref('l10n_fi.account_tag_group_short-term_liabilities')])]"/>
+      <field name="sequence">8</field>
+      <field name="green_on_positive">True</field>
+    </record>
+    <record id="sprintit_balance_bpvpy" model="account.financial.html.report.line">
+      <field name="formulas">balance = -sum.balance</field>
+      <field name="groupby">account_id</field>
+      <field name="name">Velat omistusyhteysyrityksille</field>
+      <field name="special_date_changer">normal</field>
+      <field name="print_on_new_page">False</field>
+      <field name="show_domain">foldable</field>
+      <field name="hide_if_zero">False</field>
+      <field name="figure_type">float</field>
+      <field name="level">4</field>
+      <field name="code">BPVPY</field>
+      <field name="parent_id" ref="sprintit_balance_bpvp"/>
+      <field name="display_name">Velat omistusyhteysyrityksille</field>
+      <field name="domain" eval="[('account_id.tag_ids', 'in', [ref('l10n_fi.account_tag_payables_to_associated_companies_non-current')])]"/>
+      <field name="sequence">9</field>
+      <field name="green_on_positive">True</field>
+    </record>
+    <record id="sprintit_balance_bpvly" model="account.financial.html.report.line">
+      <field name="formulas">balance = -sum.balance</field>
+      <field name="groupby">account_id</field>
+      <field name="name">Velat omistusyhteysyrityksille</field>
+      <field name="special_date_changer">normal</field>
+      <field name="print_on_new_page">False</field>
+      <field name="show_domain">foldable</field>
+      <field name="hide_if_zero">False</field>
+      <field name="figure_type">float</field>
+      <field name="level">4</field>
+      <field name="code">BPVLY</field>
+      <field name="parent_id" ref="sprintit_balance_bpvl"/>
+      <field name="display_name">Velat omistusyhteysyrityksille</field>
+      <field name="domain" eval="[('account_id.tag_ids', 'in', [ref('l10n_fi.account_tag_trade_payables_to_associated_companies'),ref('l10n_fi.account_tag_payables_to_associated_companies')])]"/>
+      <field name="sequence">9</field>
+      <field name="green_on_positive">True</field>
+    </record>
+    <record id="sprintit_balance_bpvld" model="account.financial.html.report.line">
+      <field name="formulas">balance = -sum.balance</field>
+      <field name="groupby">account_id</field>
+      <field name="name">Laskennalliset verovelat</field>
+      <field name="special_date_changer">normal</field>
+      <field name="print_on_new_page">False</field>
+      <field name="show_domain">foldable</field>
+      <field name="hide_if_zero">False</field>
+      <field name="figure_type">float</field>
+      <field name="level">4</field>
+      <field name="code">BPVLD</field>
+      <field name="parent_id" ref="sprintit_balance_bpvl"/>
+      <field name="display_name">Laskennalliset verovelat</field>
+      <field name="domain" eval="[('account_id.tag_ids', 'in', [ref('l10n_fi.account_tag_deferred_tax_liabilities_are_short-term')])]"/>
+      <field name="sequence">10</field>
+      <field name="green_on_positive">True</field>
+    </record>
+    <record id="sprintit_balance_bpvpd" model="account.financial.html.report.line">
+      <field name="formulas">balance = -sum.balance</field>
+      <field name="groupby">account_id</field>
+      <field name="name">Laskennalliset verovelat</field>
+      <field name="special_date_changer">normal</field>
+      <field name="print_on_new_page">False</field>
+      <field name="show_domain">foldable</field>
+      <field name="hide_if_zero">False</field>
+      <field name="figure_type">float</field>
+      <field name="level">4</field>
+      <field name="code">BPVPD</field>
+      <field name="parent_id" ref="sprintit_balance_bpvp"/>
+      <field name="display_name">Laskennalliset verovelat</field>
+      <field name="domain" eval="[('account_id.tag_ids', 'in', [ref('l10n_fi.account_tag_deferred_tax_liabilities_are_long-term')])]"/>
+      <field name="sequence">10</field>
+      <field name="green_on_positive">True</field>
+    </record>
+    <record id="sprintit_balance_bpvpm" model="account.financial.html.report.line">
+      <field name="formulas">balance = -sum.balance</field>
+      <field name="groupby">account_id</field>
+      <field name="name">Muut velat</field>
+      <field name="special_date_changer">normal</field>
+      <field name="print_on_new_page">False</field>
+      <field name="show_domain">foldable</field>
+      <field name="hide_if_zero">False</field>
+      <field name="figure_type">float</field>
+      <field name="level">4</field>
+      <field name="code">BPVPM</field>
+      <field name="parent_id" ref="sprintit_balance_bpvp"/>
+      <field name="display_name">Muut velat</field>
+      <field name="domain" eval="[('account_id.tag_ids', 'in', [ref('l10n_fi.account_tag_other_long-term_liabilities')])]"/>
+      <field name="sequence">11</field>
+      <field name="green_on_positive">True</field>
+    </record>
+    <record id="sprintit_balance_bpvlm" model="account.financial.html.report.line">
+      <field name="formulas">balance = -sum.balance</field>
+      <field name="groupby">account_id</field>
+      <field name="name">Muut velat</field>
+      <field name="special_date_changer">normal</field>
+      <field name="print_on_new_page">False</field>
+      <field name="show_domain">foldable</field>
+      <field name="hide_if_zero">False</field>
+      <field name="figure_type">float</field>
+      <field name="level">4</field>
+      <field name="code">BPVLM</field>
+      <field name="parent_id" ref="sprintit_balance_bpvl"/>
+      <field name="display_name">Muut velat</field>
+      <field name="domain" eval="[('account_id.tag_ids', 'in', [ref('l10n_fi.account_tag_other_short-term_liabilities')])]"/>
+      <field name="sequence">11</field>
+      <field name="green_on_positive">True</field>
+    </record>
+    <record id="sprintit_balance_bpvps" model="account.financial.html.report.line">
+      <field name="formulas">balance = -sum.balance</field>
+      <field name="groupby">account_id</field>
+      <field name="name">Siirtovelat</field>
+      <field name="special_date_changer">normal</field>
+      <field name="print_on_new_page">False</field>
+      <field name="show_domain">foldable</field>
+      <field name="hide_if_zero">False</field>
+      <field name="figure_type">float</field>
+      <field name="level">4</field>
+      <field name="code">BPVPS</field>
+      <field name="parent_id" ref="sprintit_balance_bpvp"/>
+      <field name="display_name">Siirtovelat</field>
+      <field name="domain" eval="[('account_id.tag_ids', 'in', [ref('l10n_fi.account_tag_accrued_long-term')])]"/>
+      <field name="sequence">12</field>
+      <field name="green_on_positive">True</field>
+    </record>
+    <record id="sprintit_balance_bpvls" model="account.financial.html.report.line">
+      <field name="formulas">balance = -sum.balance</field>
+      <field name="groupby">account_id</field>
+      <field name="name">Siirtovelat</field>
+      <field name="special_date_changer">normal</field>
+      <field name="print_on_new_page">False</field>
+      <field name="show_domain">foldable</field>
+      <field name="hide_if_zero">False</field>
+      <field name="figure_type">float</field>
+      <field name="level">4</field>
+      <field name="code">BPVLS</field>
+      <field name="parent_id" ref="sprintit_balance_bpvl"/>
+      <field name="display_name">Siirtovelat</field>
+      <field name="domain" eval="[('account_id.tag_ids', 'in', [ref('l10n_fi.account_tag_accrued_liabilities_short-term')])]"/>
+      <field name="sequence">12</field>
+      <field name="green_on_positive">True</field>
+    </record>
+  </data>
+</odoo>

@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record model="account.financial.html.report" id="sprintit_profit_and_loss_report">
+            <field name="name">Profit and Loss (FIN)</field>
+            <field name="data_range">True</field>
+            <field name="comparison">True</field>
+            <field name="analytic">True</field>
+            <field name="show_journal_filter">True</field>
+            <field name="generated_menu_id" eval="ref('menu_account_report_pl_fin')"/>
+
+        </record>
+        <record model="account.financial.html.report" id="sprintit_balance_report">
+            <field name="name">Balance Sheet (FIN)</field>
+            <field name="data_range">False</field>
+            <field name="comparison">True</field>
+            <field name="analytic">True</field>
+            <field name="show_journal_filter">True</field>
+            <field name="generated_menu_id" eval="ref('menu_account_report_bs_fin')"/>
+
+        </record>
+        <record model="account.financial.html.report" id="sprintit_vat_periodical_report">
+            <field name="name">VAT period report (FIN)</field>
+            <field name="data_range">True</field>
+            <field name="comparison">True</field>
+            <field name="show_journal_filter">False</field>
+            <field name="generated_menu_id" eval="ref('menu_account_report_vat_fin')"/>
+        </record>
+
+
+        <record id="action_account_report_vat" model="ir.actions.client">
+            <field name="context"
+                   eval="{'model':'account.financial.html.report', 'id':ref('sprintit_vat_periodical_report')}"/>
+        </record>
+
+        <record id="action_account_report_profit_and_loss" model="ir.actions.client">
+            <field name="context"
+                   eval="{'model':'account.financial.html.report', 'id':ref('sprintit_profit_and_loss_report')}"/>
+        </record>
+
+        <record id="action_account_report_balance" model="ir.actions.client">
+            <field name="context"
+                   eval="{'model':'account.financial.html.report', 'id':ref('sprintit_balance_report')}"/>
+        </record>
+
+    </data>
+</odoo>

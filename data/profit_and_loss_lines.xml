@@ -1,0 +1,724 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<odoo>
+  <data>
+    <record model="account.financial.html.report.line" id="sprintit_profit_and_lossrnet">
+      <field name="name">Tilikauden voitto (tappio)</field>
+      <field name="level">0</field>
+      <field name="code">RNET</field>
+      <field name="display_name">Tilikauden voitto (tappio)</field>
+      <field name="print_on_new_page">False</field>
+      <field name="sequence">14</field>
+      <field name="financial_report_id" ref="sprintit_profit_and_loss_report"/>
+      <field name="hide_if_zero">False</field>
+      <field name="figure_type">float</field>
+      <field name="special_date_changer">normal</field>
+      <field name="show_domain">foldable</field>
+      <field name="green_on_positive">True</field>
+      <field name="formulas">balance = RETV.balance + RTS.balance + RTV.balance + RMV.balance</field>
+    </record>
+    <record model="account.financial.html.report.line" id="sprintit_profit_and_lossrlv">
+      <field name="name">LIIKEVAIHTO</field>
+      <field name="level">1</field>
+      <field name="code">RLV</field>
+      <field name="display_name">LIIKEVAIHTO</field>
+      <field name="groupby">account_id</field>
+      <field eval="[('account_id.tag_ids', 'in', [ref('l10n_fi.account_tag_sales'),ref('l10n_fi.account_tag_sales_adjustment_items')])]" name="domain"/>
+      <field name="print_on_new_page">False</field>
+      <field name="sequence">0</field>
+      <field name="financial_report_id" ref="sprintit_profit_and_loss_report"/>
+      <field name="hide_if_zero">False</field>
+      <field name="figure_type">float</field>
+      <field name="special_date_changer">normal</field>
+      <field name="show_domain">foldable</field>
+      <field name="green_on_positive">True</field>
+      <field name="formulas">balance = -sum.balance</field>
+    </record>
+    <record model="account.financial.html.report.line" id="sprintit_profit_and_lossrlvt">
+      <field name="name">LIIKEVOITTO (-TAPPIO)</field>
+      <field name="level">1</field>
+      <field name="code">RLVT</field>
+      <field name="display_name">LIIKEVOITTO (-TAPPIO)</field>
+      <field name="print_on_new_page">False</field>
+      <field name="sequence">8</field>
+      <field name="financial_report_id" ref="sprintit_profit_and_loss_report"/>
+      <field name="hide_if_zero">False</field>
+      <field name="figure_type">float</field>
+      <field name="special_date_changer">normal</field>
+      <field name="show_domain">foldable</field>
+      <field name="green_on_positive">True</field>
+      <field name="formulas">balance = RLV.balance + RVVM.balance + RVOK.balance + RLMT.balance + RMP.balance+ RHK.balance + RPA.balance + RLMK.balance</field>
+    </record>
+    <record model="account.financial.html.report.line" id="sprintit_profit_and_lossretv">
+      <field name="name">VOITTO (TAPPIO) ENNEN TILINPÄÄTÖSSIIRTOJA JA VEROJA</field>
+      <field name="level">1</field>
+      <field name="code">RETV</field>
+      <field name="display_name">VOITTO (TAPPIO) ENNEN TILINPÄÄTÖSSIIRTOJA JA VEROJA</field>
+      <field name="print_on_new_page">False</field>
+      <field name="sequence">10</field>
+      <field name="financial_report_id" ref="sprintit_profit_and_loss_report"/>
+      <field name="hide_if_zero">False</field>
+      <field name="figure_type">float</field>
+      <field name="special_date_changer">normal</field>
+      <field name="show_domain">foldable</field>
+      <field name="green_on_positive">True</field>
+      <field name="formulas">balance = RLVT.balance + RRTK.balance</field>
+    </record>
+    <record model="account.financial.html.report.line" id="sprintit_profit_and_lossrvvm">
+      <field name="name">Valmiiden ja keskeneräisten tuotteiden varastojen muutos</field>
+      <field name="level">2</field>
+      <field name="code">RVVM</field>
+      <field name="display_name">Valmiiden ja keskeneräisten tuotteiden varastojen muutos</field>
+      <field name="groupby">account_id</field>
+      <field eval="[('account_id.tag_ids', 'in', [ref('l10n_fi.account_tag_manufacturing_warehouse_change')])]" name="domain"/>
+      <field name="print_on_new_page">False</field>
+      <field name="sequence">1</field>
+      <field name="financial_report_id" ref="sprintit_profit_and_loss_report"/>
+      <field name="hide_if_zero">False</field>
+      <field name="figure_type">float</field>
+      <field name="special_date_changer">normal</field>
+      <field name="show_domain">foldable</field>
+      <field name="green_on_positive">True</field>
+      <field name="formulas">balance = -sum.balance</field>
+    </record>
+    <record model="account.financial.html.report.line" id="sprintit_profit_and_lossrvok">
+      <field name="name">Valmistus omaan käyttöön</field>
+      <field name="level">2</field>
+      <field name="code">RVOK</field>
+      <field name="display_name">Valmistus omaan käyttöön</field>
+      <field name="groupby">account_id</field>
+      <field eval="[('account_id.tag_ids', 'in', [ref('l10n_fi.account_tag_manufacturing_own_use')])]" name="domain"/>
+      <field name="print_on_new_page">False</field>
+      <field name="sequence">2</field>
+      <field name="financial_report_id" ref="sprintit_profit_and_loss_report"/>
+      <field name="hide_if_zero">False</field>
+      <field name="figure_type">float</field>
+      <field name="special_date_changer">normal</field>
+      <field name="show_domain">foldable</field>
+      <field name="green_on_positive">True</field>
+      <field name="formulas">balance = -sum.balance</field>
+    </record>
+    <record model="account.financial.html.report.line" id="sprintit_profit_and_lossrlmt">
+      <field name="name">Liiketoiminnan muut tuotot</field>
+      <field name="level">2</field>
+      <field name="code">RLMT</field>
+      <field name="display_name">Liiketoiminnan muut tuotot</field>
+      <field name="groupby">account_id</field>
+      <field eval="[('account_id.tag_ids', 'in', [ref('l10n_fi.account_tag_income_other')])]" name="domain"/>
+      <field name="print_on_new_page">False</field>
+      <field name="sequence">3</field>
+      <field name="financial_report_id" ref="sprintit_profit_and_loss_report"/>
+      <field name="hide_if_zero">False</field>
+      <field name="figure_type">float</field>
+      <field name="special_date_changer">normal</field>
+      <field name="show_domain">foldable</field>
+      <field name="green_on_positive">True</field>
+      <field name="formulas">balance = -sum.balance</field>
+    </record>
+    <record model="account.financial.html.report.line" id="sprintit_profit_and_lossrmp">
+      <field name="name">Materiaalit ja palvelut</field>
+      <field name="level">2</field>
+      <field name="code">RMP</field>
+      <field name="display_name">Materiaalit ja palvelut</field>
+      <field name="print_on_new_page">False</field>
+      <field name="sequence">4</field>
+      <field name="financial_report_id" ref="sprintit_profit_and_loss_report"/>
+      <field name="hide_if_zero">False</field>
+      <field name="figure_type">float</field>
+      <field name="special_date_changer">normal</field>
+      <field name="show_domain">foldable</field>
+      <field name="green_on_positive">True</field>
+      <field name="formulas">balance = RATT.balance + RUP.balance</field>
+    </record>
+    <record model="account.financial.html.report.line" id="sprintit_profit_and_lossrhk">
+      <field name="name">Henkilöstökulut</field>
+      <field name="level">2</field>
+      <field name="code">RHK</field>
+      <field name="display_name">Henkilöstökulut</field>
+      <field name="print_on_new_page">False</field>
+      <field name="sequence">5</field>
+      <field name="financial_report_id" ref="sprintit_profit_and_loss_report"/>
+      <field name="hide_if_zero">False</field>
+      <field name="figure_type">float</field>
+      <field name="special_date_changer">normal</field>
+      <field name="show_domain">foldable</field>
+      <field name="green_on_positive">True</field>
+      <field name="formulas">balance = RHPP.balance + RHSK.balance</field>
+    </record>
+    <record model="account.financial.html.report.line" id="sprintit_profit_and_lossrpa">
+      <field name="name">Poistot ja arvonalentumiset</field>
+      <field name="level">2</field>
+      <field name="code">RPA</field>
+      <field name="display_name">Poistot ja arvonalentumiset</field>
+      <field name="print_on_new_page">False</field>
+      <field name="sequence">6</field>
+      <field name="financial_report_id" ref="sprintit_profit_and_loss_report"/>
+      <field name="hide_if_zero">False</field>
+      <field name="figure_type">float</field>
+      <field name="special_date_changer">normal</field>
+      <field name="show_domain">foldable</field>
+      <field name="green_on_positive">True</field>
+      <field name="formulas">balance = RSMP.balance + RAPV.balance + RAVV.balance</field>
+    </record>
+    <record model="account.financial.html.report.line" id="sprintit_profit_and_lossrlmk">
+      <field name="name">Liiketoiminnan muut kulut</field>
+      <field name="level">2</field>
+      <field name="code">RLMK</field>
+      <field name="display_name">Liiketoiminnan muut kulut</field>
+      <field name="groupby">account_id</field>
+      <field eval="[('account_id.tag_ids', 'in', [ref('l10n_fi.account_tag_other_additional_expenses_production'),ref('l10n_fi.account_tag_personnel_other'),ref('l10n_fi.account_tag_premises_costs'),ref('l10n_fi.account_tag_vehicle_expenses'),ref('l10n_fi.account_tag_it_expenses'),ref('l10n_fi.account_tag_in_machinery_and_equipment_expenses'),ref('l10n_fi.account_tag_travelling'),ref('l10n_fi.account_tag_representation'),ref('l10n_fi.account_tag_selling_expenses'),ref('l10n_fi.account_tag_marketing_expenses'),ref('l10n_fi.account_tag_research_and_development'),ref('l10n_fi.account_tag_administrative_services'),ref('l10n_fi.account_tag_other_administrative_expenses'),ref('l10n_fi.account_tag_other_fixed_costs')])]" name="domain"/>
+      <field name="print_on_new_page">False</field>
+      <field name="sequence">7</field>
+      <field name="financial_report_id" ref="sprintit_profit_and_loss_report"/>
+      <field name="hide_if_zero">False</field>
+      <field name="figure_type">float</field>
+      <field name="special_date_changer">normal</field>
+      <field name="show_domain">foldable</field>
+      <field name="green_on_positive">True</field>
+      <field name="formulas">balance = -sum.balance</field>
+    </record>
+    <record model="account.financial.html.report.line" id="sprintit_profit_and_lossrrtk">
+      <field name="name">Rahoitustuotot ja –kulut</field>
+      <field name="level">2</field>
+      <field name="code">RRTK</field>
+      <field name="display_name">Rahoitustuotot ja –kulut</field>
+      <field name="print_on_new_page">False</field>
+      <field name="sequence">9</field>
+      <field name="financial_report_id" ref="sprintit_profit_and_loss_report"/>
+      <field name="hide_if_zero">False</field>
+      <field name="figure_type">float</field>
+      <field name="special_date_changer">normal</field>
+      <field name="show_domain">foldable</field>
+      <field name="green_on_positive">True</field>
+      <field name="formulas">balance = RTOK.balance + RTOY.balance + RTPV.balance + RTKO.balance + RASI.balance+ RARA.balance + RKKO.balance</field>
+    </record>
+    <record model="account.financial.html.report.line" id="sprintit_profit_and_lossrts">
+      <field name="name">Tilinpäätössiirrot</field>
+      <field name="level">2</field>
+      <field name="code">RTS</field>
+      <field name="display_name">Tilinpäätössiirrot</field>
+      <field name="print_on_new_page">False</field>
+      <field name="sequence">11</field>
+      <field name="financial_report_id" ref="sprintit_profit_and_loss_report"/>
+      <field name="hide_if_zero">False</field>
+      <field name="figure_type">float</field>
+      <field name="special_date_changer">normal</field>
+      <field name="show_domain">foldable</field>
+      <field name="green_on_positive">True</field>
+      <field name="formulas">balance = RPEM.balance + RVEM.balance + RKA.balance</field>
+    </record>
+    <record model="account.financial.html.report.line" id="sprintit_profit_and_lossrtv">
+      <field name="name">Tuloverot</field>
+      <field name="level">2</field>
+      <field name="code">RTV</field>
+      <field name="display_name">Tuloverot</field>
+      <field name="print_on_new_page">False</field>
+      <field name="sequence">12</field>
+      <field name="financial_report_id" ref="sprintit_profit_and_loss_report"/>
+      <field name="hide_if_zero">False</field>
+      <field name="figure_type">float</field>
+      <field name="special_date_changer">normal</field>
+      <field name="show_domain">foldable</field>
+      <field name="green_on_positive">True</field>
+      <field name="formulas">balance = RTKV.balance + RLAV.balance</field>
+    </record>
+    <record model="account.financial.html.report.line" id="sprintit_profit_and_lossrmv">
+      <field name="name">Muut välittömät verot</field>
+      <field name="level">2</field>
+      <field name="code">RMV</field>
+      <field name="display_name">Muut välittömät verot</field>
+      <field name="groupby">account_id</field>
+      <field eval="[('account_id.tag_ids', 'in', [ref('l10n_fi.account_tag_other_tax')])]" name="domain"/>
+      <field name="print_on_new_page">False</field>
+      <field name="sequence">13</field>
+      <field name="financial_report_id" ref="sprintit_profit_and_loss_report"/>
+      <field name="hide_if_zero">False</field>
+      <field name="figure_type">float</field>
+      <field name="special_date_changer">normal</field>
+      <field name="show_domain">foldable</field>
+      <field name="green_on_positive">True</field>
+      <field name="formulas">balance = -sum.balance</field>
+    </record>
+    <record model="account.financial.html.report.line" id="sprintit_profit_and_lossrtkv">
+      <field name="name">Tilikauden verot</field>
+      <field name="level">3</field>
+      <field name="code">RTKV</field>
+      <field name="display_name">Tilikauden verot</field>
+      <field name="groupby">account_id</field>
+      <field name="parent_id" ref="sprintit_profit_and_lossrtv"/>
+      <field eval="[('account_id.tag_ids', 'in', [ref('l10n_fi.account_tag_taxes_for_the_period')])]" name="domain"/>
+      <field name="print_on_new_page">False</field>
+      <field name="sequence">0</field>
+      <field name="hide_if_zero">False</field>
+      <field name="figure_type">float</field>
+      <field name="special_date_changer">normal</field>
+      <field name="show_domain">foldable</field>
+      <field name="green_on_positive">True</field>
+      <field name="formulas">balance = -sum.balance</field>
+    </record>
+    <record model="account.financial.html.report.line" id="sprintit_profit_and_lossrpem">
+      <field name="name">Poistoeron muutos</field>
+      <field name="level">3</field>
+      <field name="code">RPEM</field>
+      <field name="display_name">Poistoeron muutos</field>
+      <field name="groupby">account_id</field>
+      <field name="parent_id" ref="sprintit_profit_and_lossrts"/>
+      <field eval="[('account_id.tag_ids', 'in', [ref('l10n_fi.account_tag_change_in_depreciation_difference')])]" name="domain"/>
+      <field name="print_on_new_page">False</field>
+      <field name="sequence">0</field>
+      <field name="hide_if_zero">False</field>
+      <field name="figure_type">float</field>
+      <field name="special_date_changer">normal</field>
+      <field name="show_domain">foldable</field>
+      <field name="green_on_positive">True</field>
+      <field name="formulas">balance = -sum.balance</field>
+    </record>
+    <record model="account.financial.html.report.line" id="sprintit_profit_and_lossrtok">
+      <field name="name">Tuotot osuuksista saman konsernin yrityksissä</field>
+      <field name="level">3</field>
+      <field name="code">RTOK</field>
+      <field name="display_name">Tuotot osuuksista saman konsernin yrityksissä</field>
+      <field name="groupby">account_id</field>
+      <field name="parent_id" ref="sprintit_profit_and_lossrrtk"/>
+      <field eval="[('account_id.tag_ids', 'in', [ref('l10n_fi.account_tag_income_from_shares_in_group')])]" name="domain"/>
+      <field name="print_on_new_page">False</field>
+      <field name="sequence">0</field>
+      <field name="hide_if_zero">False</field>
+      <field name="figure_type">float</field>
+      <field name="special_date_changer">normal</field>
+      <field name="show_domain">foldable</field>
+      <field name="green_on_positive">True</field>
+      <field name="formulas">balance = -sum.balance</field>
+    </record>
+    <record model="account.financial.html.report.line" id="sprintit_profit_and_lossrsmp">
+      <field name="name">Suunnitelman mukaiset poistot</field>
+      <field name="level">3</field>
+      <field name="code">RSMP</field>
+      <field name="display_name">Suunnitelman mukaiset poistot</field>
+      <field name="groupby">account_id</field>
+      <field name="parent_id" ref="sprintit_profit_and_lossrpa"/>
+      <field eval="[('account_id.tag_ids', 'in', [ref('l10n_fi.account_tag_depreciation_according_to_plan')])]" name="domain"/>
+      <field name="print_on_new_page">False</field>
+      <field name="sequence">0</field>
+      <field name="hide_if_zero">False</field>
+      <field name="figure_type">float</field>
+      <field name="special_date_changer">normal</field>
+      <field name="show_domain">foldable</field>
+      <field name="green_on_positive">True</field>
+      <field name="formulas">balance = -sum.balance</field>
+    </record>
+    <record model="account.financial.html.report.line" id="sprintit_profit_and_lossratt">
+      <field name="name">Aineet, tarvikkeet ja tavarat</field>
+      <field name="level">3</field>
+      <field name="code">RATT</field>
+      <field name="display_name">Aineet, tarvikkeet ja tavarat</field>
+      <field name="parent_id" ref="sprintit_profit_and_lossrmp"/>
+      <field name="print_on_new_page">False</field>
+      <field name="sequence">0</field>
+      <field name="hide_if_zero">False</field>
+      <field name="figure_type">float</field>
+      <field name="special_date_changer">normal</field>
+      <field name="show_domain">foldable</field>
+      <field name="green_on_positive">True</field>
+      <field name="formulas">balance = ROS.balance + RVM.balance</field>
+    </record>
+    <record model="account.financial.html.report.line" id="sprintit_profit_and_lossrhpp">
+      <field name="name">Palkat ja palkkiot</field>
+      <field name="level">3</field>
+      <field name="code">RHPP</field>
+      <field name="display_name">Palkat ja palkkiot</field>
+      <field name="groupby">account_id</field>
+      <field name="parent_id" ref="sprintit_profit_and_lossrhk"/>
+      <field eval="[('account_id.tag_ids', 'in', [ref('l10n_fi.account_tag_wages_and_salaries_in_production'),ref('l10n_fi.account_tag_wages_and_salaries_other')])]" name="domain"/>
+      <field name="print_on_new_page">False</field>
+      <field name="sequence">0</field>
+      <field name="hide_if_zero">False</field>
+      <field name="figure_type">float</field>
+      <field name="special_date_changer">normal</field>
+      <field name="show_domain">foldable</field>
+      <field name="green_on_positive">True</field>
+      <field name="formulas">balance = -sum.balance</field>
+    </record>
+    <record model="account.financial.html.report.line" id="sprintit_profit_and_lossrlav">
+      <field name="name">Laskennalliset verot</field>
+      <field name="level">3</field>
+      <field name="code">RLAV</field>
+      <field name="display_name">Laskennalliset verot</field>
+      <field name="groupby">account_id</field>
+      <field name="parent_id" ref="sprintit_profit_and_lossrtv"/>
+      <field eval="[('account_id.tag_ids', 'in', [ref('l10n_fi.account_tag_deferred_taxes')])]" name="domain"/>
+      <field name="print_on_new_page">False</field>
+      <field name="sequence">1</field>
+      <field name="hide_if_zero">False</field>
+      <field name="figure_type">float</field>
+      <field name="special_date_changer">normal</field>
+      <field name="show_domain">foldable</field>
+      <field name="green_on_positive">True</field>
+      <field name="formulas">balance = -sum.balance</field>
+    </record>
+    <record model="account.financial.html.report.line" id="sprintit_profit_and_lossrapv">
+      <field name="name">Arvonalentumiset pysyvien vastaavien hyödykkeistä</field>
+      <field name="level">3</field>
+      <field name="code">RAPV</field>
+      <field name="display_name">Arvonalentumiset pysyvien vastaavien hyödykkeistä</field>
+      <field name="groupby">account_id</field>
+      <field name="parent_id" ref="sprintit_profit_and_lossrpa"/>
+      <field eval="[('account_id.tag_ids', 'in', [ref('l10n_fi.account_tag_impairment_of_fixed_assets')])]" name="domain"/>
+      <field name="print_on_new_page">False</field>
+      <field name="sequence">1</field>
+      <field name="hide_if_zero">False</field>
+      <field name="figure_type">float</field>
+      <field name="special_date_changer">normal</field>
+      <field name="show_domain">foldable</field>
+      <field name="green_on_positive">True</field>
+      <field name="formulas">balance = -sum.balance</field>
+    </record>
+    <record model="account.financial.html.report.line" id="sprintit_profit_and_lossrtoy">
+      <field name="name">Tuotot osuuksista omistusyhteysyrityksissä</field>
+      <field name="level">3</field>
+      <field name="code">RTOY</field>
+      <field name="display_name">Tuotot osuuksista omistusyhteysyrityksissä</field>
+      <field name="groupby">account_id</field>
+      <field name="parent_id" ref="sprintit_profit_and_lossrrtk"/>
+      <field eval="[('account_id.tag_ids', 'in', [ref('l10n_fi.account_tag_income_from_associated_company')])]" name="domain"/>
+      <field name="print_on_new_page">False</field>
+      <field name="sequence">1</field>
+      <field name="hide_if_zero">False</field>
+      <field name="figure_type">float</field>
+      <field name="special_date_changer">normal</field>
+      <field name="show_domain">foldable</field>
+      <field name="green_on_positive">True</field>
+      <field name="formulas">balance = -sum.balance</field>
+    </record>
+    <record model="account.financial.html.report.line" id="sprintit_profit_and_lossrvem">
+      <field name="name">Verotusperusteisten varausten muutos</field>
+      <field name="level">3</field>
+      <field name="code">RVEM</field>
+      <field name="display_name">Verotusperusteisten varausten muutos</field>
+      <field name="groupby">account_id</field>
+      <field name="parent_id" ref="sprintit_profit_and_lossrts"/>
+      <field eval="[('account_id.tag_ids', 'in', [ref('l10n_fi.account_tag_change_in_provisions')])]" name="domain"/>
+      <field name="print_on_new_page">False</field>
+      <field name="sequence">1</field>
+      <field name="hide_if_zero">False</field>
+      <field name="figure_type">float</field>
+      <field name="special_date_changer">normal</field>
+      <field name="show_domain">foldable</field>
+      <field name="green_on_positive">True</field>
+      <field name="formulas">balance = -sum.balance</field>
+    </record>
+    <record model="account.financial.html.report.line" id="sprintit_profit_and_lossrup">
+      <field name="name">Ulkopuoliset palvelut</field>
+      <field name="level">3</field>
+      <field name="code">RUP</field>
+      <field name="display_name">Ulkopuoliset palvelut</field>
+      <field name="groupby">account_id</field>
+      <field name="parent_id" ref="sprintit_profit_and_lossrmp"/>
+      <field eval="[('account_id.tag_ids', 'in', [ref('l10n_fi.account_tag_external_services')])]" name="domain"/>
+      <field name="print_on_new_page">False</field>
+      <field name="sequence">1</field>
+      <field name="hide_if_zero">False</field>
+      <field name="figure_type">float</field>
+      <field name="special_date_changer">normal</field>
+      <field name="show_domain">foldable</field>
+      <field name="green_on_positive">True</field>
+      <field name="formulas">balance = -sum.balance</field>
+    </record>
+    <record model="account.financial.html.report.line" id="sprintit_profit_and_lossrhsk">
+      <field name="name">Henkilösivukulut</field>
+      <field name="level">3</field>
+      <field name="code">RHSK</field>
+      <field name="display_name">Henkilösivukulut</field>
+      <field name="parent_id" ref="sprintit_profit_and_lossrhk"/>
+      <field name="print_on_new_page">False</field>
+      <field name="sequence">1</field>
+      <field name="hide_if_zero">False</field>
+      <field name="figure_type">float</field>
+      <field name="special_date_changer">normal</field>
+      <field name="show_domain">foldable</field>
+      <field name="green_on_positive">True</field>
+      <field name="formulas">balance = RHEK.balance + RHMK.balance</field>
+    </record>
+    <record model="account.financial.html.report.line" id="sprintit_profit_and_lossravv">
+      <field name="name">Vaihtuvien vastaavien arvonalentumiset</field>
+      <field name="level">3</field>
+      <field name="code">RAVV</field>
+      <field name="display_name">Vaihtuvien vastaavien arvonalentumiset</field>
+      <field name="groupby">account_id</field>
+      <field name="parent_id" ref="sprintit_profit_and_lossrpa"/>
+      <field eval="[('account_id.tag_ids', 'in', [ref('l10n_fi.account_tag_impairment_losses_financial_assets_current_assets')])]" name="domain"/>
+      <field name="print_on_new_page">False</field>
+      <field name="sequence">2</field>
+      <field name="hide_if_zero">False</field>
+      <field name="figure_type">float</field>
+      <field name="special_date_changer">normal</field>
+      <field name="show_domain">foldable</field>
+      <field name="green_on_positive">True</field>
+      <field name="formulas">balance = -sum.balance</field>
+    </record>
+    <record model="account.financial.html.report.line" id="sprintit_profit_and_lossrtpv">
+      <field name="name">Tuotot muista pysyvien vastaavien sijoituksista</field>
+      <field name="level">3</field>
+      <field name="code">RTPV</field>
+      <field name="display_name">Tuotot muista pysyvien vastaavien sijoituksista</field>
+      <field name="parent_id" ref="sprintit_profit_and_lossrrtk"/>
+      <field name="print_on_new_page">False</field>
+      <field name="sequence">2</field>
+      <field name="hide_if_zero">False</field>
+      <field name="figure_type">float</field>
+      <field name="special_date_changer">normal</field>
+      <field name="show_domain">foldable</field>
+      <field name="green_on_positive">True</field>
+      <field name="formulas">balance = RTPK.balance + RTPM.balance</field>
+    </record>
+    <record model="account.financial.html.report.line" id="sprintit_profit_and_lossrka">
+      <field name="name">Konserniavustus</field>
+      <field name="level">3</field>
+      <field name="code">RKA</field>
+      <field name="display_name">Konserniavustus</field>
+      <field name="groupby">account_id</field>
+      <field name="parent_id" ref="sprintit_profit_and_lossrts"/>
+      <field eval="[('account_id.tag_ids', 'in', [ref('l10n_fi.account_tag_group_contribution')])]" name="domain"/>
+      <field name="print_on_new_page">False</field>
+      <field name="sequence">2</field>
+      <field name="hide_if_zero">False</field>
+      <field name="figure_type">float</field>
+      <field name="special_date_changer">normal</field>
+      <field name="show_domain">foldable</field>
+      <field name="green_on_positive">True</field>
+      <field name="formulas">balance = -sum.balance</field>
+    </record>
+    <record model="account.financial.html.report.line" id="sprintit_profit_and_lossrtko">
+      <field name="name">Muut korko- ja rahoitustuotot</field>
+      <field name="level">3</field>
+      <field name="code">RTKO</field>
+      <field name="display_name">Muut korko- ja rahoitustuotot</field>
+      <field name="parent_id" ref="sprintit_profit_and_lossrrtk"/>
+      <field name="print_on_new_page">False</field>
+      <field name="sequence">3</field>
+      <field name="hide_if_zero">False</field>
+      <field name="figure_type">float</field>
+      <field name="special_date_changer">normal</field>
+      <field name="show_domain">foldable</field>
+      <field name="green_on_positive">True</field>
+      <field name="formulas">balance = RTKK.balance + RTKM.balance</field>
+    </record>
+    <record model="account.financial.html.report.line" id="sprintit_profit_and_lossrasi">
+      <field name="name">Arvonalentumiset pysyvien vastaavien sijoituksista</field>
+      <field name="level">3</field>
+      <field name="code">RASI</field>
+      <field name="display_name">Arvonalentumiset pysyvien vastaavien sijoituksista</field>
+      <field name="groupby">account_id</field>
+      <field name="parent_id" ref="sprintit_profit_and_lossrrtk"/>
+      <field eval="[('account_id.tag_ids', 'in', [ref('l10n_fi.account_tag_impairment_losses_on_investments_in_fixed_assets')])]" name="domain"/>
+      <field name="print_on_new_page">False</field>
+      <field name="sequence">4</field>
+      <field name="hide_if_zero">False</field>
+      <field name="figure_type">float</field>
+      <field name="special_date_changer">normal</field>
+      <field name="show_domain">foldable</field>
+      <field name="green_on_positive">True</field>
+      <field name="formulas">balance = -sum.balance</field>
+    </record>
+    <record model="account.financial.html.report.line" id="sprintit_profit_and_lossrara">
+      <field name="name">Arvonalentumiset vaihtuvien vastaavien rahoitusarvopapereista</field>
+      <field name="level">3</field>
+      <field name="code">RARA</field>
+      <field name="display_name">Arvonalentumiset vaihtuvien vastaavien rahoitusarvopapereista</field>
+      <field name="groupby">account_id</field>
+      <field name="parent_id" ref="sprintit_profit_and_lossrrtk"/>
+      <field name="print_on_new_page">False</field>
+      <field name="sequence">5</field>
+      <field name="hide_if_zero">False</field>
+      <field name="figure_type">float</field>
+      <field name="special_date_changer">normal</field>
+      <field name="show_domain">foldable</field>
+      <field name="green_on_positive">True</field>
+      <field name="formulas">balance = -sum.balance</field>
+    </record>
+    <record model="account.financial.html.report.line" id="sprintit_profit_and_lossrkko">
+      <field name="name">Korkokulut ja muut rahoituskulut</field>
+      <field name="level">3</field>
+      <field name="code">RKKO</field>
+      <field name="display_name">Korkokulut ja muut rahoituskulut</field>
+      <field name="parent_id" ref="sprintit_profit_and_lossrrtk"/>
+      <field name="print_on_new_page">False</field>
+      <field name="sequence">6</field>
+      <field name="hide_if_zero">False</field>
+      <field name="figure_type">float</field>
+      <field name="special_date_changer">normal</field>
+      <field name="show_domain">foldable</field>
+      <field name="green_on_positive">True</field>
+      <field name="formulas">balance = RKKK.balance + RKKM.balance</field>
+    </record>
+    <record model="account.financial.html.report.line" id="sprintit_profit_and_lossrtpk">
+      <field name="name">Saman konsernin yrityksiltä</field>
+      <field name="level">4</field>
+      <field name="code">RTPK</field>
+      <field name="display_name">Saman konsernin yrityksiltä</field>
+      <field name="groupby">account_id</field>
+      <field name="parent_id" ref="sprintit_profit_and_lossrtpv"/>
+      <field eval="[('account_id.tag_ids', 'in', [ref('l10n_fi.account_tag_investment_income_other_current_assets_group')])]" name="domain"/>
+      <field name="print_on_new_page">False</field>
+      <field name="sequence">0</field>
+      <field name="hide_if_zero">False</field>
+      <field name="figure_type">float</field>
+      <field name="special_date_changer">normal</field>
+      <field name="show_domain">foldable</field>
+      <field name="green_on_positive">True</field>
+      <field name="formulas">balance = -sum.balance</field>
+    </record>
+    <record model="account.financial.html.report.line" id="sprintit_profit_and_lossros">
+      <field name="name">Ostot tilikauden aikana</field>
+      <field name="level">4</field>
+      <field name="code">ROS</field>
+      <field name="display_name">Ostot tilikauden aikana</field>
+      <field name="groupby">account_id</field>
+      <field name="parent_id" ref="sprintit_profit_and_lossratt"/>
+      <field eval="[('account_id.tag_ids', 'in', [ref('l10n_fi.account_tag_purchases'),ref('l10n_fi.account_tag_purchases_adjustment_items')])]" name="domain"/>
+      <field name="print_on_new_page">False</field>
+      <field name="sequence">0</field>
+      <field name="hide_if_zero">False</field>
+      <field name="figure_type">float</field>
+      <field name="special_date_changer">normal</field>
+      <field name="show_domain">foldable</field>
+      <field name="green_on_positive">True</field>
+      <field name="formulas">balance = -sum.balance</field>
+    </record>
+    <record model="account.financial.html.report.line" id="sprintit_profit_and_lossrhek">
+      <field name="name">Eläkekulut</field>
+      <field name="level">4</field>
+      <field name="code">RHEK</field>
+      <field name="display_name">Eläkekulut</field>
+      <field name="groupby">account_id</field>
+      <field name="parent_id" ref="sprintit_profit_and_lossrhsk"/>
+      <field eval="[('account_id.tag_ids', 'in', [ref('l10n_fi.account_tag_pension_costs_of_production'),ref('l10n_fi.account_tag_pension_costs_other')])]" name="domain"/>
+      <field name="print_on_new_page">False</field>
+      <field name="sequence">0</field>
+      <field name="hide_if_zero">False</field>
+      <field name="figure_type">float</field>
+      <field name="special_date_changer">normal</field>
+      <field name="show_domain">foldable</field>
+      <field name="green_on_positive">True</field>
+      <field name="formulas">balance = -sum.balance</field>
+    </record>
+    <record model="account.financial.html.report.line" id="sprintit_profit_and_lossrkkk">
+      <field name="name">Saman konsernin yrityksille</field>
+      <field name="level">4</field>
+      <field name="code">RKKK</field>
+      <field name="display_name">Saman konsernin yrityksille</field>
+      <field name="groupby">account_id</field>
+      <field name="parent_id" ref="sprintit_profit_and_lossrkko"/>
+      <field eval="[('account_id.tag_ids', 'in', [ref('l10n_fi.account_tag_financial_expenses_group')])]" name="domain"/>
+      <field name="print_on_new_page">False</field>
+      <field name="sequence">0</field>
+      <field name="hide_if_zero">False</field>
+      <field name="figure_type">float</field>
+      <field name="special_date_changer">normal</field>
+      <field name="show_domain">foldable</field>
+      <field name="green_on_positive">True</field>
+      <field name="formulas">balance = -sum.balance</field>
+    </record>
+    <record model="account.financial.html.report.line" id="sprintit_profit_and_lossrtkk">
+      <field name="name">Saman konsernin yrityksiltä</field>
+      <field name="level">4</field>
+      <field name="code">RTKK</field>
+      <field name="display_name">Saman konsernin yrityksiltä</field>
+      <field name="groupby">account_id</field>
+      <field name="parent_id" ref="sprintit_profit_and_lossrtko"/>
+      <field eval="[('account_id.tag_ids', 'in', [ref('l10n_fi.account_tag_interest_and_financial_income_from_group')])]" name="domain"/>
+      <field name="print_on_new_page">False</field>
+      <field name="sequence">0</field>
+      <field name="hide_if_zero">False</field>
+      <field name="figure_type">float</field>
+      <field name="special_date_changer">normal</field>
+      <field name="show_domain">foldable</field>
+      <field name="green_on_positive">True</field>
+      <field name="formulas">balance = -sum.balance</field>
+    </record>
+    <record model="account.financial.html.report.line" id="sprintit_profit_and_lossrkkm">
+      <field name="name">Muille</field>
+      <field name="level">4</field>
+      <field name="code">RKKM</field>
+      <field name="display_name">Muille</field>
+      <field name="groupby">account_id</field>
+      <field name="parent_id" ref="sprintit_profit_and_lossrkko"/>
+      <field eval="[('account_id.tag_ids', 'in', [ref('l10n_fi.account_tag_other_financial_expenses')])]" name="domain"/>
+      <field name="print_on_new_page">False</field>
+      <field name="sequence">1</field>
+      <field name="hide_if_zero">False</field>
+      <field name="figure_type">float</field>
+      <field name="special_date_changer">normal</field>
+      <field name="show_domain">foldable</field>
+      <field name="green_on_positive">True</field>
+      <field name="formulas">balance = -sum.balance</field>
+    </record>
+    <record model="account.financial.html.report.line" id="sprintit_profit_and_lossrtkm">
+      <field name="name">Muilta</field>
+      <field name="level">4</field>
+      <field name="code">RTKM</field>
+      <field name="display_name">Muilta</field>
+      <field name="groupby">account_id</field>
+      <field name="parent_id" ref="sprintit_profit_and_lossrtko"/>
+      <field eval="[('account_id.tag_ids', 'in', [ref('l10n_fi.account_tag_other_interest_and_financial_income')])]" name="domain"/>
+      <field name="print_on_new_page">False</field>
+      <field name="sequence">1</field>
+      <field name="hide_if_zero">False</field>
+      <field name="figure_type">float</field>
+      <field name="special_date_changer">normal</field>
+      <field name="show_domain">foldable</field>
+      <field name="green_on_positive">True</field>
+      <field name="formulas">balance = -sum.balance</field>
+    </record>
+    <record model="account.financial.html.report.line" id="sprintit_profit_and_lossrtpm">
+      <field name="name">Muilta</field>
+      <field name="level">4</field>
+      <field name="code">RTPM</field>
+      <field name="display_name">Muilta</field>
+      <field name="groupby">account_id</field>
+      <field name="parent_id" ref="sprintit_profit_and_lossrtpv"/>
+      <field eval="[('account_id.tag_ids', 'in', [ref('l10n_fi.account_tag_other_investment_income_from_fixed_assets')])]" name="domain"/>
+      <field name="print_on_new_page">False</field>
+      <field name="sequence">1</field>
+      <field name="hide_if_zero">False</field>
+      <field name="figure_type">float</field>
+      <field name="special_date_changer">normal</field>
+      <field name="show_domain">foldable</field>
+      <field name="green_on_positive">True</field>
+      <field name="formulas">balance = -sum.balance</field>
+    </record>
+    <record model="account.financial.html.report.line" id="sprintit_profit_and_lossrhmk">
+      <field name="name">Muut henkilösivukulut</field>
+      <field name="level">4</field>
+      <field name="code">RHMK</field>
+      <field name="display_name">Muut henkilösivukulut</field>
+      <field name="groupby">account_id</field>
+      <field name="parent_id" ref="sprintit_profit_and_lossrhsk"/>
+      <field eval="[('account_id.tag_ids', 'in', [ref('l10n_fi.account_tag_other_additional_expenses_other')])]" name="domain"/>
+      <field name="print_on_new_page">False</field>
+      <field name="sequence">1</field>
+      <field name="hide_if_zero">False</field>
+      <field name="figure_type">float</field>
+      <field name="special_date_changer">normal</field>
+      <field name="show_domain">foldable</field>
+      <field name="green_on_positive">True</field>
+      <field name="formulas">balance = -sum.balance</field>
+    </record>
+    <record model="account.financial.html.report.line" id="sprintit_profit_and_lossrvm">
+      <field name="name">Varastojen muutos</field>
+      <field name="level">4</field>
+      <field name="code">RVM</field>
+      <field name="display_name">Varastojen muutos</field>
+      <field name="groupby">account_id</field>
+      <field name="parent_id" ref="sprintit_profit_and_lossratt"/>
+      <field eval="[('account_id.tag_ids', 'in', [ref('l10n_fi.account_tag_change_in_inventories')])]" name="domain"/>
+      <field name="print_on_new_page">True</field>
+      <field name="sequence">1</field>
+      <field name="hide_if_zero">False</field>
+      <field name="figure_type">float</field>
+      <field name="special_date_changer">normal</field>
+      <field name="show_domain">foldable</field>
+      <field name="green_on_positive">True</field>
+      <field name="formulas">balance = -sum.balance</field>
+    </record>
+  </data>
+</odoo>

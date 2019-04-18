@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <record id="action_account_report_vat" model="ir.actions.client">
+            <field name="name">VAT Period Report (FIN)</field>
+            <field name="type">ir.actions.client</field>
+            <field name="binding_type">action</field>
+            <field name="target">current</field>
+            <field name="tag">account_report</field>
+        </record>
+
+        <record id="action_account_report_profit_and_loss" model="ir.actions.client">
+            <field name="name">Profit and Loss (FIN)</field>
+            <field name="type">ir.actions.client</field>
+            <field name="binding_type">action</field>
+            <field name="target">current</field>
+            <field name="tag">account_report</field>
+        </record>
+
+        <record id="action_account_report_balance" model="ir.actions.client">
+            <field name="name">Balance Sheet (FIN)</field>
+            <field name="type">ir.actions.client</field>
+            <field name="binding_type">action</field>
+            <field name="target">current</field>
+            <field name="tag">account_report</field>
+        </record>
+
+        <record id="action_eu_vat_report" model="ir.actions.client">
+            <field name="name">EU VAT Report (FIN)</field>
+            <field name="tag">account_report</field>
+            <field name="context" eval="{'model': 'account.eu_vat_report'}" />
+        </record>
+
+        <menuitem id="finish_legal_statements" name="Finnish legal statement reports"
+                  parent="account.menu_finance_reports"
+                  groups="account.group_account_manager,account.group_account_user"/>
+
+        <menuitem id="menu_account_report_vat_fin" name="VAT Period Report (FIN)" parent="finish_legal_statements"
+                  groups="account.group_account_manager,account.group_account_user" action="action_account_report_vat"/>
+
+        <menuitem id="menu_account_report_bs_fin" name="Balance Sheet (FIN)" parent="finish_legal_statements"
+                  groups="account.group_account_manager,account.group_account_user" action="action_account_report_balance"/>
+
+        <menuitem id="menu_account_report_pl_fin" name="Profit and Loss (FIN)" parent="finish_legal_statements"
+                  action="action_account_report_profit_and_loss" groups="account.group_account_manager,account.group_account_user"/>
+
+        <menuitem id="menu_account_eu_vat_report" name="EU VAT Report (FIN)" parent="finish_legal_statements"
+                  action="action_eu_vat_report" groups="account.group_account_manager,account.group_account_user"/>
+
+
+    </data>
+</odoo>
