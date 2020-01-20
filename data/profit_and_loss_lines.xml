@@ -526,6 +526,7 @@
       <field name="display_name">Arvonalentumiset vaihtuvien vastaavien rahoitusarvopapereista</field>
       <field name="groupby">account_id</field>
       <field name="parent_id" ref="sprintit_profit_and_lossrrtk"/>
+      <field eval="[('account_id.tag_ids', 'in', [ref('l10n_fi.account_tag_impairment_losses_financial_assets_current_assets')])]" name="domain"/>
       <field name="print_on_new_page">False</field>
       <field name="sequence">5</field>
       <field name="hide_if_zero">False</field>
